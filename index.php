@@ -63,7 +63,7 @@ function _callback_handleMessageNew($data)
     $username = "root";
     $password = "";
     $dbname = "test_db";
-    $conn = new mysqli($servername, $username, $password, $dbname);
+//    $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
 //    if ($conn->connect_error) {
 //        bot_sendMessage($user_id, "Connection failed: " . $conn->connect_error);

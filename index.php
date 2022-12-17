@@ -59,31 +59,33 @@ function _callback_handleMessageNew($data)
     $user_id = $data['message']['from_id'];
     $text = $data['message']['text'];
 
-    $servername = "localhost";
-    $username = "bot";
-    $password = "@Aasdjkhkuhb43289b";
-    $dbname = "test_db";
-    $conn = null;
-    try {
-        $conn = new PDO("mysql:host=$servername;dbname=test_db", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully";
-    } catch(PDOException $e) {
-        log_error($e->getMessage());
-        bot_sendMessage($user_id, "Connection failed: " . $e->getMessage());
-        echo "Connection failed: " . $e->getMessage();
-    }
-    bot_sendMessage($user_id, "Connected successfully");
+    add_group($user_id, $text);
 
-    $res = $conn->query('SELECT * FROM test_table');
+//    $servername = "localhost";
+//    $username = "bot";
+//    $password = "@Aasdjkhkuhb43289b";
+//    $dbname = "test_db";
+//    $conn = null;
+//    try {
+//        $conn = new PDO("mysql:host=$servername;dbname=test_db", $username, $password);
+//        // set the PDO error mode to exception
+//        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//        echo "Connected successfully";
+//    } catch(PDOException $e) {
+//        log_error($e->getMessage());
+//        bot_sendMessage($user_id, "Connection failed: " . $e->getMessage());
+//        echo "Connection failed: " . $e->getMessage();
+//    }
+//    bot_sendMessage($user_id, "Connected successfully");
+//
+//    $res = $conn->query('SELECT * FROM test_table');
+//
+//    while ($row = $res->fetch())
+//    {
+//        bot_sendMessage($user_id, $row['test_col'] . "\n");
+//    }
 
-    while ($row = $res->fetch())
-    {
-        bot_sendMessage($user_id, $row['test_col'] . "\n");
-    }
-
-//    bot_sendMessage($user_id, $text);
+    bot_sendMessage($user_id, "successfully inserted!");
     _callback_okResponse();
 }
 

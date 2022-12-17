@@ -73,12 +73,14 @@ function _callback_handleMessageNew($data)
         _callback_okResponse();
     }
 
-    if ($payload != null && $payload['button'] == 1) {
+
+    if ($payload != null && $payload['button'] == "2") {
         $exams = get_exams($user_id, $group_id);
         $ans = "";
         foreach ($exams as $exam) {
             $ans = $ans . $exam['subject_name'] . $exam['ts'] . '\n';
         }
+
         vkApi_messagesSend($user_id, $ans);
     }
 

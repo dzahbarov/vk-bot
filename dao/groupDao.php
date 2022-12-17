@@ -38,7 +38,7 @@ function get_group($user_id)
         bot_sendMessage($user_id, $e->getMessage());
         echo "Connection failed: " . $e->getMessage();
     }
-    $stmt = $conn->prepare("SELECT group_name from group_table where user_vk_id=:user_vk_id");
+    $stmt = $conn->prepare("SELECT group_id from Students where user_vk_id=:user_vk_id");
     $stmt->execute([
         'user_vk_id' => $user_id
     ]);

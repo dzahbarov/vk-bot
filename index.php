@@ -60,16 +60,32 @@ function _callback_handleMessageNew($data)
     $user_id = $data['message']['from_id'];
     $text = $data['message']['text'];
 
+    $payload = null;
 
+    if (property_exists($data, 'payload')) {
+        $payload = $data['payload'];
+    }
     $group_id = get_group($user_id);
 
     if ($group_id == null) {
         $key = json_decode(file_get_contents("bot/add_group.json"), true);
         vkApi_messagesSendWithKeyboard($user_id, "Hi", $key);
-    } else {
-        $key = json_decode(file_get_contents("bot/test.json"), true);
-        vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
+        _callback_okResponse();
     }
+
+    if ($payload != null && $payload['button'] == 1) {
+        $exams = get_exams($user_id, $group_id);
+        $ans = "";
+        foreach ($exams as $exam) {
+            $ans = $ans . $exam['subject_name'] . $exam['ts'] . '\n';
+        }
+        vkApi_messagesSend($user_id, $ans);
+    }
+
+
+    $key = json_decode(file_get_contents("bot/test.json"), true);
+    vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
+
 
 //    $key = "{  \n   \"one_time\":false,\n   \"buttons\":[  \n      [  \n         {  \n            \"action\":{  \n               \"type\":\"location\",\n               \"payload\":\"{\\\"button\\\": \\\"1\\\"}\"\n            }\n         }\n      ],\n      [  \n         {  \n            \"action\":{  \n               \"type\":\"open_app\",\n               \"app_id\":6232540,\n               \"owner_id\":-157525928,\n               \"hash\":\"123\",\n               \"label\":\"LiveWidget\"\n            }\n         }\n      ],\n      [  \n         {  \n            \"action\":{  \n               \"type\":\"vkpay\",\n               \"hash\":\"action=transfer-to-group&group_id=181108510&aid=10\"\n            }\n         }\n      ],\n      [  \n         {  \n            \"action\":{  \n               \"type\":\"text\",\n               \"payload\":\"{\\\"button\\\": \\\"1\\\"}\",\n               \"label\":\"Red\"\n            },\n            \"color\":\"negative\"\n         },\n         {  \n            \"action\":{  \n               \"type\":\"text\",\n               \"payload\":\"{\\\"button\\\": \\\"2\\\"}\",\n               \"label\":\"Green\"\n            },\n            \"color\":\"positive\"\n         },\n         {  \n            \"action\":{  \n               \"type\":\"text\",\n               \"payload\":\"{\\\"button\\\": \\\"2\\\"}\",\n               \"label\":\"Blue\"\n            },\n            \"color\":\"primary\"\n         },\n         {  \n            \"action\":{  \n               \"type\":\"text\",\n               \"payload\":\"{\\\"button\\\": \\\"2\\\"}\",\n               \"label\":\"White\"\n            },\n            \"color\":\"secondary\"\n         }\n      ]\n   ]\n}";
 //    $key = json_decode(file_get_contents("bot/test.json"), true);

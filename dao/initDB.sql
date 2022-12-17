@@ -10,7 +10,7 @@ create table Students
 
 create table 'Groups'
 (
-    group_id int PRIMARY KEY AUTO_INCREMENT,
+    group_id int AUTO_INCREMENT PRIMARY KEY ,
     group_no char(6)
 );
 
@@ -23,7 +23,7 @@ create table Exams
 
 create table Subjects
 (
-    subject_id int PRIMARY KEY AUTO_INCREMENT,
+    subject_id int AUTO_INCREMENT PRIMARY KEY,
     subject_name varchar(50),
     lector varchar(50),
     exam boolean

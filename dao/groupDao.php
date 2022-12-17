@@ -22,7 +22,7 @@ function add_group($user_id, $group_name) {
     $stmt= $conn->prepare($sql);
     $stmt->bindParam(1, $user_id);
     $stmt->bindParam(2, $group_name);
-    $stmt->execute([$user_id, $group_name]);
+    $stmt->execute();
     bot_sendMessage($user_id, "6");
 }
 

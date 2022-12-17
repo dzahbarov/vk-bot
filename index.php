@@ -59,9 +59,9 @@ function _callback_handleMessageNew($data)
 {
     $user_id = $data['message']['from_id'];
     $text = $data['message']['text'];
-
+    bot_sendMessage($user_id, "1");
     add_group($user_id, $text);
-
+    bot_sendMessage($user_id, "5");
 //    $servername = "localhost";
 //    $username = "bot";
 //    $password = "@Aasdjkhkuhb43289b";

@@ -63,7 +63,7 @@ function _callback_handleMessageNew($data)
     $username = "bot";
     $password = "@Aasdjkhkuhb43289b";
     $dbname = "test_db";
-
+    $conn = null;
     try {
         $conn = new PDO("mysql:host=$servername;dbname=test_db", $username, $password);
         // set the PDO error mode to exception
@@ -74,9 +74,16 @@ function _callback_handleMessageNew($data)
         bot_sendMessage($user_id, "Connection failed: " . $e->getMessage());
         echo "Connection failed: " . $e->getMessage();
     }
-
     bot_sendMessage($user_id, "Connected successfully");
-    bot_sendMessage($user_id, $text);
+
+    $res = $conn->query('SELECT * FROM test_table');
+
+    while ($row = $res->fetch())
+    {
+        bot_sendMessage($user_id, $row['test_col'] . "\n");
+    }
+
+//    bot_sendMessage($user_id, $text);
     _callback_okResponse();
 }
 

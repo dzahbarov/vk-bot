@@ -18,11 +18,13 @@ function add_group($user_id, $group_name) {
         echo "Connection failed: " . $e->getMessage();
     }
     bot_sendMessage($user_id, "4");
-    $sql = "INSERT INTO group_table (user_vk_id, group_name) VALUES (?,?)";
-    $stmt= $conn->prepare($sql);
-    $stmt->bindParam(1, $user_id);
-    $stmt->bindParam(2, $group_name);
-    $stmt->execute();
+    $stmt= $conn->prepare("INSERT INTO group_table (user_vk_id, group_name) VALUES (:user_vk_id,:group_name)");
+//    $stmt->bindParam(1, $user_id);
+//    $stmt->bindParam(2, $group_name);
+    $stmt->execute([
+        'user_vk_id' => $user_id,
+        'group_name' => $group_name
+    ]);
     bot_sendMessage($user_id, "6");
 }
 

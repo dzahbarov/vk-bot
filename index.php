@@ -59,36 +59,14 @@ function _callback_handleMessageNew($data)
 {
     $user_id = $data['message']['from_id'];
     $text = $data['message']['text'];
-    bot_sendMessage($user_id, "1");
-    add_group($user_id, $text);
-    bot_sendMessage($user_id, "5");
-//    $servername = "localhost";
-//    $username = "bot";
-//    $password = "@Aasdjkhkuhb43289b";
-//    $dbname = "test_db";
-//    $conn = null;
-//    try {
-//        $conn = new PDO("mysql:host=$servername;dbname=test_db", $username, $password);
-//        // set the PDO error mode to exception
-//        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//        echo "Connected successfully";
-//    } catch(PDOException $e) {
-//        log_error($e->getMessage());
-//        bot_sendMessage($user_id, "Connection failed: " . $e->getMessage());
-//        echo "Connection failed: " . $e->getMessage();
-//    }
-//    bot_sendMessage($user_id, "Connected successfully");
-//
-//    $res = $conn->query('SELECT * FROM test_table');
-//
-//    while ($row = $res->fetch())
-//    {
-//        bot_sendMessage($user_id, $row['test_col'] . "\n");
-//    }
 
 
-//    bot_sendMessage($user_id, $text);=
-    bot_sendMessage($user_id, "successfully inserted!");
+    $key = "{  \n   \"one_time\":false,\n   \"buttons\":[  \n      [  \n         {  \n            \"action\":{  \n               \"type\":\"location\",\n               \"payload\":\"{\\\"button\\\": \\\"1\\\"}\"\n            }\n         }\n      ],\n      [  \n         {  \n            \"action\":{  \n               \"type\":\"open_app\",\n               \"app_id\":6232540,\n               \"owner_id\":-157525928,\n               \"hash\":\"123\",\n               \"label\":\"LiveWidget\"\n            }\n         }\n      ],\n      [  \n         {  \n            \"action\":{  \n               \"type\":\"vkpay\",\n               \"hash\":\"action=transfer-to-group&group_id=181108510&aid=10\"\n            }\n         }\n      ],\n      [  \n         {  \n            \"action\":{  \n               \"type\":\"text\",\n               \"payload\":\"{\\\"button\\\": \\\"1\\\"}\",\n               \"label\":\"Red\"\n            },\n            \"color\":\"negative\"\n         },\n         {  \n            \"action\":{  \n               \"type\":\"text\",\n               \"payload\":\"{\\\"button\\\": \\\"2\\\"}\",\n               \"label\":\"Green\"\n            },\n            \"color\":\"positive\"\n         },\n         {  \n            \"action\":{  \n               \"type\":\"text\",\n               \"payload\":\"{\\\"button\\\": \\\"2\\\"}\",\n               \"label\":\"Blue\"\n            },\n            \"color\":\"primary\"\n         },\n         {  \n            \"action\":{  \n               \"type\":\"text\",\n               \"payload\":\"{\\\"button\\\": \\\"2\\\"}\",\n               \"label\":\"White\"\n            },\n            \"color\":\"secondary\"\n         }\n      ]\n   ]\n}";
+
+    vkApi_messagesSendWithKeyboardTest($user_id, "Hi", $key);
+
+//    add_group($user_id, $text);
+
     _callback_okResponse();
 }
 

@@ -18,15 +18,14 @@ create table Exams
 (
     group_id int,
     subject_id int,
-    ts timestamp null
+    ts Date null
 );
 
 create table Subjects
 (
     subject_id int AUTO_INCREMENT PRIMARY KEY,
     subject_name varchar(50),
-    lector varchar(50),
-    exam boolean
+    lector varchar(50)
 );
 
 alter table Students
@@ -37,7 +36,6 @@ alter table Exams
     add constraint Exams_subject_id
         foreign key (subject_id) references `Subjects`(subject_id);
 
-
 insert into `Groups`(group_no) values ('M33371');
 
 insert into Subjects(subject_name, lector) values
@@ -46,8 +44,13 @@ insert into Subjects(subject_name, lector) values
     ('Параллельное программирование', 'Елизаров Роман Анатольевич'),
     ('Математическая статистика', 'Блаженов Алексей Викторович'),
     ('Функциональное программирование', 'Serokell'),
-    ('PHP', 'VK');
+    ('PHP', 'VK'),
+    ('Blockchain', 'MixBytes');
 
+insert into Exams(group_id, subject_id, ts) values
+    (1, 2, '2022-01-13'),
+    (1, 3, '2022-01-17'),
+    (1, 4, '2022-01-23')
 
 
 

@@ -2,6 +2,7 @@
 
 function get_exams($user_id, $group_id)
 {
+    bot_sendMessage($user_id, "34");
     $servername = "localhost";
     $username = "bot";
     $password = "@Aasdjkhkuhb43289b";

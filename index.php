@@ -73,7 +73,7 @@ function _callback_handleMessageNew($data)
         _callback_okResponse();
     }
 
-
+    bot_sendMessage($user_id, "-1");
     if ($payload != null && $payload['button'] == "2") {
         bot_sendMessage($user_id, "0");
         $exams = get_exams($user_id, $group_id);

@@ -11,7 +11,7 @@ create table Students
 create table `Groups`
 (
     group_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    group_no VARCHAR(6)
+    group_no char(6)
 );
 
 create table Exams

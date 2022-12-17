@@ -8,7 +8,7 @@ create table Students
     group_id int
 );
 
-create table 'Groups'
+create table `Groups`
 (
     group_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     group_no VARCHAR(6)

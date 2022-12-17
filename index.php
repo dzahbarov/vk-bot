@@ -85,6 +85,8 @@ function _callback_handleMessageNew($data)
 //        bot_sendMessage($user_id, $row['test_col'] . "\n");
 //    }
 
+
+//    bot_sendMessage($user_id, $text);=
     bot_sendMessage($user_id, "successfully inserted!");
     _callback_okResponse();
 }

@@ -1,12 +1,13 @@
-CREATE DATABASE IF NOT EXISTS test_db;
+CREATE DATABASE IF NOT EXISTS bot_db;
 
-use test_db;
+use bot_db;
 
-create table test_table
+create table group_table
 (
-    test_col int null
+    user_vk_id int not null,
+    group_name tinytext not null
 );
 
-insert into test_table(test_col)
-values (42);
+# insert into test_table(test_col)
+# values (42);
 

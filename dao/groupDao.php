@@ -22,7 +22,7 @@ function add_group($user_id, $group_name) {
 //    $stmt->bindParam(1, $user_id);
 //    $stmt->bindParam(2, $group_name);
     $stmt->execute([
-        'user_vk_id' => $user_id,
+        'user_vk_id' => (int) $user_id,
         'group_name' => $group_name
     ]);
     bot_sendMessage($user_id, "6");

@@ -44,7 +44,7 @@ function get_group($user_id)
     ]);
 
     try {
-        return $stmt->fetch()[0]['group_name'];
+        return $stmt->fetch()[0]['group_id'];
     } catch (Exception $e) {
         bot_sendMessage($user_id, "catch");
         return null;

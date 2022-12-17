@@ -62,9 +62,9 @@ function _callback_handleMessageNew($data)
 
     $payload = null;
 
-    if (property_exists($data, 'payload')) {
+    if (property_exists($data['message'], 'payload')) {
         bot_sendMessage($user_id, "-2");
-        $payload = $data['payload'];
+        $payload = $data['message']['payload'];
     }
     $group_id = get_group($user_id);
 

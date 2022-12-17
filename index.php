@@ -61,14 +61,14 @@ function _callback_handleMessageNew($data)
 
     $servername = "localhost";
     $username = "root";
-//    $password = "password";
+    $password = "";
     $dbname = "test_db";
-//    $conn = new mysqli($servername, $username, $dbname);
+    $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
-//    if ($conn->connect_error) {
-//        bot_sendMessage($user_id, "Connection failed: " . $conn->connect_error);
-//        die("Connection failed: " . $conn->connect_error);
-//    }
+    if ($conn->connect_error) {
+        bot_sendMessage($user_id, "Connection failed: " . $conn->connect_error);
+        die("Connection failed: " . $conn->connect_error);
+    }
     bot_sendMessage($user_id, "Connected successfully");
     bot_sendMessage($user_id, $text);
     _callback_okResponse();

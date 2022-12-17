@@ -63,12 +63,18 @@ function _callback_handleMessageNew($data)
     $username = "bot";
     $password = "@Aasdjkhkuhb43289b";
     $dbname = "test_db";
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-//    if ($conn->connect_error) {
-//        bot_sendMessage($user_id, "Connection failed: " . $conn->connect_error);
-//        die("Connection failed: " . $conn->connect_error);
-//    }
+
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=test_db", $username, $password);
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo "Connected successfully";
+    } catch(PDOException $e) {
+        log_error($e->getMessage());
+        bot_sendMessage($user_id, "Connection failed: " . $e->getMessage());
+        echo "Connection failed: " . $e->getMessage();
+    }
+
     bot_sendMessage($user_id, "Connected successfully");
     bot_sendMessage($user_id, $text);
     _callback_okResponse();

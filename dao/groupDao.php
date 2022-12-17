@@ -44,6 +44,12 @@ function get_group($user_id)
         'user_vk_id' => $user_id
     ]);
 
-    return $stmt->fetch()[0]['group_name'];
+    try {
+        return $stmt->fetch()[0]['group_name'];
+    } catch (Exception $e) {
+        return null;
+    }
+
+
 }
 

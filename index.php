@@ -64,7 +64,7 @@ function _callback_handleMessageNew($data)
 
     bot_sendMessage($user_id, $data['message']['payload']);
 
-    if (isset($data->message->$payload)) {
+    if (isset($data->message->payload)) {
         bot_sendMessage($user_id, "-2");
         $payload = json_decode($data['message']['payload']);
     }

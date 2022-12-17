@@ -14,7 +14,7 @@ function add_group($user_id, $group_name) {
         bot_sendMessage($user_id, $e->getMessage());
         echo "Connection failed: " . $e->getMessage();
     }
-    $sql = "INSERT INTO group_table(user_vk_id, group_name) VALUES (?,?)";
+    $sql = "INSERT INTO group_table (user_vk_id, group_name) VALUES (?,?)";
     $stmt= $conn->prepare($sql);
     $stmt->execute([$user_id, $group_name]);
 }

@@ -33,12 +33,11 @@ function get_group($user_id)
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "Connected successfully";
-        bot_sendMessage($user_id, "3");
+
     } catch (PDOException $e) {
         bot_sendMessage($user_id, $e->getMessage());
         echo "Connection failed: " . $e->getMessage();
     }
-    bot_sendMessage($user_id, "4");
     $stmt = $conn->prepare("SELECT group_name from group_table where user_vk_id=:user_vk_id");
     $stmt->execute([
         'user_vk_id' => $user_id
@@ -47,6 +46,7 @@ function get_group($user_id)
     try {
         return $stmt->fetch()[0]['group_name'];
     } catch (Exception $e) {
+        bot_sendMessage($user_id, "catch");
         return null;
     }
 

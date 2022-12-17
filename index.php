@@ -60,7 +60,7 @@ function _callback_handleMessageNew($data)
     $text = $data['message']['text'];
 
     $servername = "localhost";
-    $username = "root";
+    $username = "bot";
     $password = "@Aasdjkhkuhb43289b";
     $dbname = "test_db";
     $conn = new mysqli($servername, $username, $password, $dbname);

@@ -1,0 +1,159 @@
+-01:02:54 [callback_handleEvent] : [ERROR] Exception: File not found: /var/www/static/cat.jpeg in /var/www/api/vk_api.php:77
+Stack trace:
+#0 /var/www/bot/bot.php(23): vkApi_upload()
+#1 /var/www/bot/bot.php(8): _bot_uploadPhoto()
+#2 /var/www/index.php(56): bot_sendMessage()
+#3 /var/www/index.php(32): _callback_handleMessageNew()
+#4 /var/www/index.php(18): callback_handleEvent()
+#5 {main}
+00:05:54 [callback_handleEvent] : [ERROR] Exception: File not found: /var/www/audio/audio_53b88f970b767dd2073b69296e2a3894.ogg in /var/www/api/vk_api.php:77
+Stack trace:
+#0 /var/www/bot/bot.php(37): vkApi_upload()
+#1 /var/www/bot/bot.php(11): _bot_uploadVoiceMessage()
+#2 /var/www/index.php(56): bot_sendMessage()
+#3 /var/www/index.php(32): _callback_handleMessageNew()
+#4 /var/www/index.php(18): callback_handleEvent()
+#5 {main}
+00:06:04 [callback_handleEvent] : [ERROR] Exception: File not found: /var/www/audio/audio_53b88f970b767dd2073b69296e2a3894.ogg in /var/www/api/vk_api.php:77
+Stack trace:
+#0 /var/www/bot/bot.php(37): vkApi_upload()
+#1 /var/www/bot/bot.php(11): _bot_uploadVoiceMessage()
+#2 /var/www/index.php(56): bot_sendMessage()
+#3 /var/www/index.php(32): _callback_handleMessageNew()
+#4 /var/www/index.php(18): callback_handleEvent()
+#5 {main}
+00:07:47 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: file is undefined","request_params":[{"key":"title","value":"Voice message"},{"key":"v","value":"5.131"},{"key":"method","value":"docs.save"},{"key":"oauth","value":"1"}]}}
+00:07:47 [callback_handleEvent] : [ERROR] Exception: Invalid response for docs.save request in /var/www/api/vk_api.php:69
+Stack trace:
+#0 /var/www/api/vk_api.php(44): _vkApi_call()
+#1 /var/www/bot/bot.php(41): vkApi_docsSave()
+#2 /var/www/bot/bot.php(11): _bot_uploadVoiceMessage()
+#3 /var/www/index.php(56): bot_sendMessage()
+#4 /var/www/index.php(32): _callback_handleMessageNew()
+#5 /var/www/index.php(18): callback_handleEvent()
+#6 {main}
+00:09:12 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: file is undefined","request_params":[{"key":"title","value":"Voice message"},{"key":"v","value":"5.131"},{"key":"method","value":"docs.save"},{"key":"oauth","value":"1"}]}}
+00:09:12 [callback_handleEvent] : [ERROR] Exception: Invalid response for docs.save request in /var/www/api/vk_api.php:69
+Stack trace:
+#0 /var/www/api/vk_api.php(44): _vkApi_call()
+#1 /var/www/bot/bot.php(41): vkApi_docsSave()
+#2 /var/www/bot/bot.php(11): _bot_uploadVoiceMessage()
+#3 /var/www/index.php(56): bot_sendMessage()
+#4 /var/www/index.php(32): _callback_handleMessageNew()
+#5 /var/www/index.php(18): callback_handleEvent()
+#6 {main}
+00:22:44 [_bot_uploadVoiceMessage] : [ERROR] {"error":"empty_file","error_descr":"empty_file","error_is_logged":false}
+00:22:44 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: file is undefined","request_params":[{"key":"title","value":"Voice message"},{"key":"v","value":"5.131"},{"key":"method","value":"docs.save"},{"key":"oauth","value":"1"}]}}
+00:22:44 [callback_handleEvent] : [ERROR] Exception: Invalid response for docs.save request in /var/www/api/vk_api.php:69
+Stack trace:
+#0 /var/www/api/vk_api.php(44): _vkApi_call()
+#1 /var/www/bot/bot.php(41): vkApi_docsSave()
+#2 /var/www/bot/bot.php(11): _bot_uploadVoiceMessage()
+#3 /var/www/index.php(56): bot_sendMessage()
+#4 /var/www/index.php(32): _callback_handleMessageNew()
+#5 /var/www/index.php(18): callback_handleEvent()
+#6 {main}
+00:24:19 [_bot_uploadVoiceMessage] : [ERROR] {"upload_url":"https:\/\/pu.vk.com\/c500717\/upload.php?act=add_doc_new&mid=-217317010&aid=-1&gid=0&type=audio_message&peer_id=171330601&rhash=b1eef7a941b72767674e5cb8c8b1a08b&api=1&server=500717&_origin=https%3A%2F%2Fapi.vk.com&_sig=0bf7d4bbbc3cdd0d2f5a3ac5d9165e34"}
+00:24:19 [_bot_uploadVoiceMessage] : [ERROR] {"error":"empty_file","error_descr":"empty_file","error_is_logged":false}
+00:24:19 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: file is undefined","request_params":[{"key":"title","value":"Voice message"},{"key":"v","value":"5.131"},{"key":"method","value":"docs.save"},{"key":"oauth","value":"1"}]}}
+00:24:19 [callback_handleEvent] : [ERROR] Exception: Invalid response for docs.save request in /var/www/api/vk_api.php:69
+Stack trace:
+#0 /var/www/api/vk_api.php(44): _vkApi_call()
+#1 /var/www/bot/bot.php(42): vkApi_docsSave()
+#2 /var/www/bot/bot.php(11): _bot_uploadVoiceMessage()
+#3 /var/www/index.php(56): bot_sendMessage()
+#4 /var/www/index.php(32): _callback_handleMessageNew()
+#5 /var/www/index.php(18): callback_handleEvent()
+#6 {main}
+00:28:50 [vkApi_upload] : [ERROR] {"server":231028,"photo":"[{\"markers_restarted\":true,\"photo\":\"2645c2dd67:x\",\"sizes\":[],\"latitude\":0,\"longitude\":0,\"kid\":\"6286a7faf2b4535e91b56bb274e852a7\",\"sizes2\":[[\"s\",\"bb5d0eb6646ccfd237611b4f79106b00e2d032e6d0f17b39d348aea9\",\"-4082427985236594021\",75,54],[\"m\",\"be48c4b9880a9123e6544a82e697daf37d6f454ef253db7c2b0af418\",\"-2932524278446245220\",130,93],[\"x\",\"e61471493aa1eeaeb77266982b59068003db5ea1431dfda00c9f092a\",\"-1840332818567957872\",266,190],[\"o\",\"be48c4b9880a9123e6544a82e697daf37d6f454ef253db7c2b0af418\",\"-2932524278446245220\",130,93],[\"p\",\"e9b102f1cd04eb16bbd97a863842ca55bd506eee00dd5e78ed360b82\",\"8592074208988106031\",200,143],[\"q\",\"1d5a67aaabf1961a425cd2ec3b26d03c76a0d0b0055cc1c21c7cd0c6\",\"-994525861477540241\",266,190],[\"r\",\"1d5a67aaabf1961a425cd2ec3b26d03c76a0d0b0055cc1c21c7cd0c6\",\"-994525861477540241\",266,190]],\"urls\":[],\"urls2\":[\"u10OtmRsz9I3YRtPeRBrAOLQMubQ8Xs500iuqQ\/m_LbhmBNWMc.jpg\",\"vkjEuYgKkSPmVEqC5pfa831vRU7yU9t8Kwr0GA\/nLoAuLSUTdc.jpg\",\"5hRxSTqh7q63cmaYK1kGgAPbXqFDHf2gDJ8JKg\/kHLDUA3TdeY.jpg\",\"vkjEuYgKkSPmVEqC5pfa831vRU7yU9t8Kwr0GA\/nLoAuLSUTdc.jpg\",\"6bEC8c0E6xa72XqGOELKVb1Qbu4A3V547TYLgg\/Lw2IZvgtPXc.jpg\",\"HVpnqqvxlhpCXNLsOybQPHag0LAFXMHCHHzQxg\/bx6xiv-7MvI.jpg\",\"HVpnqqvxlhpCXNLsOybQPHag0LAFXMHCHHzQxg\/bx6xiv-7MvI.jpg\"],\"peer_id\":171330601}]","hash":"059ef6c3745c7356064266d9085a8539"}
+00:28:50 [_bot_uploadVoiceMessage] : [ERROR] {"upload_url":"https:\/\/pu.vk.com\/c525332\/upload.php?act=add_doc_new&mid=-217317010&aid=-1&gid=0&type=audio_message&peer_id=171330601&rhash=a300a8a2245a1a4478280e61ef325523&api=1&server=525332&_origin=https%3A%2F%2Fapi.vk.com&_sig=f14b35c6f3a2ae695b36eb22478c36fe"}
+00:28:50 [vkApi_upload] : [ERROR] {"error":"empty_file","error_descr":"empty_file","error_is_logged":false}
+00:28:50 [_bot_uploadVoiceMessage] : [ERROR] {"error":"empty_file","error_descr":"empty_file","error_is_logged":false}
+00:28:51 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: file is undefined","request_params":[{"key":"title","value":"Voice message"},{"key":"v","value":"5.131"},{"key":"method","value":"docs.save"},{"key":"oauth","value":"1"}]}}
+00:28:51 [callback_handleEvent] : [ERROR] Exception: Invalid response for docs.save request in /var/www/api/vk_api.php:69
+Stack trace:
+#0 /var/www/api/vk_api.php(44): _vkApi_call()
+#1 /var/www/bot/bot.php(42): vkApi_docsSave()
+#2 /var/www/bot/bot.php(11): _bot_uploadVoiceMessage()
+#3 /var/www/index.php(56): bot_sendMessage()
+#4 /var/www/index.php(32): _callback_handleMessageNew()
+#5 /var/www/index.php(18): callback_handleEvent()
+#6 {main}
+00:35:18 [vkApi_upload] : [ERROR] {"server":536332,"photo":"[{\"markers_restarted\":true,\"photo\":\"cc75e18e8a:x\",\"sizes\":[],\"latitude\":0,\"longitude\":0,\"kid\":\"6286a7faf2b4535e91b56bb274e852a7\",\"sizes2\":[[\"s\",\"bb5d0eb6646ccfd237611b4f79106b00e2d032e6d0f17b39d348aea9\",\"-4082427985236594021\",75,54],[\"m\",\"be48c4b9880a9123e6544a82e697daf37d6f454ef253db7c2b0af418\",\"-2932524278446245220\",130,93],[\"x\",\"e61471493aa1eeaeb77266982b59068003db5ea1431dfda00c9f092a\",\"-1840332818567957872\",266,190],[\"o\",\"be48c4b9880a9123e6544a82e697daf37d6f454ef253db7c2b0af418\",\"-2932524278446245220\",130,93],[\"p\",\"e9b102f1cd04eb16bbd97a863842ca55bd506eee00dd5e78ed360b82\",\"8592074208988106031\",200,143],[\"q\",\"1d5a67aaabf1961a425cd2ec3b26d03c76a0d0b0055cc1c21c7cd0c6\",\"-994525861477540241\",266,190],[\"r\",\"1d5a67aaabf1961a425cd2ec3b26d03c76a0d0b0055cc1c21c7cd0c6\",\"-994525861477540241\",266,190]],\"urls\":[],\"urls2\":[\"u10OtmRsz9I3YRtPeRBrAOLQMubQ8Xs500iuqQ\/m_LbhmBNWMc.jpg\",\"vkjEuYgKkSPmVEqC5pfa831vRU7yU9t8Kwr0GA\/nLoAuLSUTdc.jpg\",\"5hRxSTqh7q63cmaYK1kGgAPbXqFDHf2gDJ8JKg\/kHLDUA3TdeY.jpg\",\"vkjEuYgKkSPmVEqC5pfa831vRU7yU9t8Kwr0GA\/nLoAuLSUTdc.jpg\",\"6bEC8c0E6xa72XqGOELKVb1Qbu4A3V547TYLgg\/Lw2IZvgtPXc.jpg\",\"HVpnqqvxlhpCXNLsOybQPHag0LAFXMHCHHzQxg\/bx6xiv-7MvI.jpg\",\"HVpnqqvxlhpCXNLsOybQPHag0LAFXMHCHHzQxg\/bx6xiv-7MvI.jpg\"],\"peer_id\":171330601}]","hash":"9ad2801be35916ad8dfd638a4b2da90c"}
+00:35:18 [_bot_uploadVoiceMessage] : [ERROR] /var/www/audio/audio_53b88f970b767dd2073b69296e2a3894.ogg
+00:35:19 [vkApi_upload] : [ERROR] {"error":"empty_file","error_descr":"empty_file","error_is_logged":false}
+00:35:19 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: file is undefined","request_params":[{"key":"title","value":"Voice message"},{"key":"v","value":"5.131"},{"key":"method","value":"docs.save"},{"key":"oauth","value":"1"}]}}
+00:35:19 [callback_handleEvent] : [ERROR] Exception: Invalid response for docs.save request in /var/www/api/vk_api.php:69
+Stack trace:
+#0 /var/www/api/vk_api.php(44): _vkApi_call()
+#1 /var/www/bot/bot.php(43): vkApi_docsSave()
+#2 /var/www/bot/bot.php(11): _bot_uploadVoiceMessage()
+#3 /var/www/index.php(56): bot_sendMessage()
+#4 /var/www/index.php(32): _callback_handleMessageNew()
+#5 /var/www/index.php(18): callback_handleEvent()
+#6 {main}
+00:41:23 [vkApi_upload] : [ERROR] {"server":852136,"photo":"[{\"markers_restarted\":true,\"photo\":\"ef4e789e13:x\",\"sizes\":[],\"latitude\":0,\"longitude\":0,\"kid\":\"6286a7faf2b4535e91b56bb274e852a7\",\"sizes2\":[[\"s\",\"bb5d0eb6646ccfd237611b4f79106b00e2d032e6d0f17b39d348aea9\",\"-4082427985236594021\",75,54],[\"m\",\"be48c4b9880a9123e6544a82e697daf37d6f454ef253db7c2b0af418\",\"-2932524278446245220\",130,93],[\"x\",\"e61471493aa1eeaeb77266982b59068003db5ea1431dfda00c9f092a\",\"-1840332818567957872\",266,190],[\"o\",\"be48c4b9880a9123e6544a82e697daf37d6f454ef253db7c2b0af418\",\"-2932524278446245220\",130,93],[\"p\",\"e9b102f1cd04eb16bbd97a863842ca55bd506eee00dd5e78ed360b82\",\"8592074208988106031\",200,143],[\"q\",\"1d5a67aaabf1961a425cd2ec3b26d03c76a0d0b0055cc1c21c7cd0c6\",\"-994525861477540241\",266,190],[\"r\",\"1d5a67aaabf1961a425cd2ec3b26d03c76a0d0b0055cc1c21c7cd0c6\",\"-994525861477540241\",266,190]],\"urls\":[],\"urls2\":[\"u10OtmRsz9I3YRtPeRBrAOLQMubQ8Xs500iuqQ\/m_LbhmBNWMc.jpg\",\"vkjEuYgKkSPmVEqC5pfa831vRU7yU9t8Kwr0GA\/nLoAuLSUTdc.jpg\",\"5hRxSTqh7q63cmaYK1kGgAPbXqFDHf2gDJ8JKg\/kHLDUA3TdeY.jpg\",\"vkjEuYgKkSPmVEqC5pfa831vRU7yU9t8Kwr0GA\/nLoAuLSUTdc.jpg\",\"6bEC8c0E6xa72XqGOELKVb1Qbu4A3V547TYLgg\/Lw2IZvgtPXc.jpg\",\"HVpnqqvxlhpCXNLsOybQPHag0LAFXMHCHHzQxg\/bx6xiv-7MvI.jpg\",\"HVpnqqvxlhpCXNLsOybQPHag0LAFXMHCHHzQxg\/bx6xiv-7MvI.jpg\"],\"peer_id\":171330601}]","hash":"6c7261d66a79145a519834c63db1aba8"}
+00:41:23 [_bot_uploadVoiceMessage] : [ERROR] /var/www/audio/audio_53b88f970b767dd2073b69296e2a3894.ogg
+00:41:23 [vkApi_upload] : [ERROR] {"error":"empty_file","error_descr":"empty_file","error_is_logged":false}
+00:41:23 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: file is undefined","request_params":[{"key":"title","value":"Voice message"},{"key":"v","value":"5.131"},{"key":"method","value":"docs.save"},{"key":"oauth","value":"1"}]}}
+00:41:23 [callback_handleEvent] : [ERROR] Exception: Invalid response for docs.save request in /var/www/api/vk_api.php:69
+Stack trace:
+#0 /var/www/api/vk_api.php(44): _vkApi_call()
+#1 /var/www/bot/bot.php(43): vkApi_docsSave()
+#2 /var/www/bot/bot.php(11): _bot_uploadVoiceMessage()
+#3 /var/www/index.php(56): bot_sendMessage()
+#4 /var/www/index.php(32): _callback_handleMessageNew()
+#5 /var/www/index.php(18): callback_handleEvent()
+#6 {main}
+00:42:09 [vkApi_upload] : [ERROR] {"server":847328,"photo":"[{\"markers_restarted\":true,\"photo\":\"f125811ba6:x\",\"sizes\":[],\"latitude\":0,\"longitude\":0,\"kid\":\"6286a7faf2b4535e91b56bb274e852a7\",\"sizes2\":[[\"s\",\"bb5d0eb6646ccfd237611b4f79106b00e2d032e6d0f17b39d348aea9\",\"-4082427985236594021\",75,54],[\"m\",\"be48c4b9880a9123e6544a82e697daf37d6f454ef253db7c2b0af418\",\"-2932524278446245220\",130,93],[\"x\",\"e61471493aa1eeaeb77266982b59068003db5ea1431dfda00c9f092a\",\"-1840332818567957872\",266,190],[\"o\",\"be48c4b9880a9123e6544a82e697daf37d6f454ef253db7c2b0af418\",\"-2932524278446245220\",130,93],[\"p\",\"e9b102f1cd04eb16bbd97a863842ca55bd506eee00dd5e78ed360b82\",\"8592074208988106031\",200,143],[\"q\",\"1d5a67aaabf1961a425cd2ec3b26d03c76a0d0b0055cc1c21c7cd0c6\",\"-994525861477540241\",266,190],[\"r\",\"1d5a67aaabf1961a425cd2ec3b26d03c76a0d0b0055cc1c21c7cd0c6\",\"-994525861477540241\",266,190]],\"urls\":[],\"urls2\":[\"u10OtmRsz9I3YRtPeRBrAOLQMubQ8Xs500iuqQ\/m_LbhmBNWMc.jpg\",\"vkjEuYgKkSPmVEqC5pfa831vRU7yU9t8Kwr0GA\/nLoAuLSUTdc.jpg\",\"5hRxSTqh7q63cmaYK1kGgAPbXqFDHf2gDJ8JKg\/kHLDUA3TdeY.jpg\",\"vkjEuYgKkSPmVEqC5pfa831vRU7yU9t8Kwr0GA\/nLoAuLSUTdc.jpg\",\"6bEC8c0E6xa72XqGOELKVb1Qbu4A3V547TYLgg\/Lw2IZvgtPXc.jpg\",\"HVpnqqvxlhpCXNLsOybQPHag0LAFXMHCHHzQxg\/bx6xiv-7MvI.jpg\",\"HVpnqqvxlhpCXNLsOybQPHag0LAFXMHCHHzQxg\/bx6xiv-7MvI.jpg\"],\"peer_id\":171330601}]","hash":"6557ca244eecc8c275187d9f269f4d0a"}
+00:42:09 [_bot_uploadVoiceMessage] : [ERROR] /var/www/audio/audio_53b88f970b767dd2073b69296e2a3894.ogg
+00:42:09 [vkApi_upload] : [ERROR] {"error":"empty_file","error_descr":"empty_file","error_is_logged":false}
+00:42:10 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: file is undefined","request_params":[{"key":"title","value":"Voice message"},{"key":"v","value":"5.131"},{"key":"method","value":"docs.save"},{"key":"oauth","value":"1"}]}}
+00:42:10 [callback_handleEvent] : [ERROR] Exception: Invalid response for docs.save request in /var/www/api/vk_api.php:69
+Stack trace:
+#0 /var/www/api/vk_api.php(44): _vkApi_call()
+#1 /var/www/bot/bot.php(43): vkApi_docsSave()
+#2 /var/www/bot/bot.php(11): _bot_uploadVoiceMessage()
+#3 /var/www/index.php(56): bot_sendMessage()
+#4 /var/www/index.php(32): _callback_handleMessageNew()
+#5 /var/www/index.php(18): callback_handleEvent()
+#6 {main}
+00:42:23 [vkApi_upload] : [ERROR] {"server":234231,"photo":"[{\"markers_restarted\":true,\"photo\":\"75524108b6:x\",\"sizes\":[],\"latitude\":0,\"longitude\":0,\"kid\":\"6286a7faf2b4535e91b56bb274e852a7\",\"sizes2\":[[\"s\",\"bb5d0eb6646ccfd237611b4f79106b00e2d032e6d0f17b39d348aea9\",\"-4082427985236594021\",75,54],[\"m\",\"be48c4b9880a9123e6544a82e697daf37d6f454ef253db7c2b0af418\",\"-2932524278446245220\",130,93],[\"x\",\"e61471493aa1eeaeb77266982b59068003db5ea1431dfda00c9f092a\",\"-1840332818567957872\",266,190],[\"o\",\"be48c4b9880a9123e6544a82e697daf37d6f454ef253db7c2b0af418\",\"-2932524278446245220\",130,93],[\"p\",\"e9b102f1cd04eb16bbd97a863842ca55bd506eee00dd5e78ed360b82\",\"8592074208988106031\",200,143],[\"q\",\"1d5a67aaabf1961a425cd2ec3b26d03c76a0d0b0055cc1c21c7cd0c6\",\"-994525861477540241\",266,190],[\"r\",\"1d5a67aaabf1961a425cd2ec3b26d03c76a0d0b0055cc1c21c7cd0c6\",\"-994525861477540241\",266,190]],\"urls\":[],\"urls2\":[\"u10OtmRsz9I3YRtPeRBrAOLQMubQ8Xs500iuqQ\/m_LbhmBNWMc.jpg\",\"vkjEuYgKkSPmVEqC5pfa831vRU7yU9t8Kwr0GA\/nLoAuLSUTdc.jpg\",\"5hRxSTqh7q63cmaYK1kGgAPbXqFDHf2gDJ8JKg\/kHLDUA3TdeY.jpg\",\"vkjEuYgKkSPmVEqC5pfa831vRU7yU9t8Kwr0GA\/nLoAuLSUTdc.jpg\",\"6bEC8c0E6xa72XqGOELKVb1Qbu4A3V547TYLgg\/Lw2IZvgtPXc.jpg\",\"HVpnqqvxlhpCXNLsOybQPHag0LAFXMHCHHzQxg\/bx6xiv-7MvI.jpg\",\"HVpnqqvxlhpCXNLsOybQPHag0LAFXMHCHHzQxg\/bx6xiv-7MvI.jpg\"],\"peer_id\":171330601}]","hash":"2c7b7c7cc8123b59f2101b97269a8c4c"}
+00:42:23 [_bot_uploadVoiceMessage] : [ERROR] /var/www/audio/audio_53b88f970b767dd2073b69296e2a3894.ogg
+00:42:23 [vkApi_upload] : [ERROR] {"error":"empty_file","error_descr":"empty_file","error_is_logged":false}
+00:42:23 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: file is undefined","request_params":[{"key":"title","value":"Voice message"},{"key":"v","value":"5.131"},{"key":"method","value":"docs.save"},{"key":"oauth","value":"1"}]}}
+00:42:23 [callback_handleEvent] : [ERROR] Exception: Invalid response for docs.save request in /var/www/api/vk_api.php:69
+Stack trace:
+#0 /var/www/api/vk_api.php(44): _vkApi_call()
+#1 /var/www/bot/bot.php(43): vkApi_docsSave()
+#2 /var/www/bot/bot.php(11): _bot_uploadVoiceMessage()
+#3 /var/www/index.php(56): bot_sendMessage()
+#4 /var/www/index.php(32): _callback_handleMessageNew()
+#5 /var/www/index.php(18): callback_handleEvent()
+#6 {main}
+00:42:38 [vkApi_upload] : [ERROR] {"server":228131,"photo":"[{\"markers_restarted\":true,\"photo\":\"eeda2bb576:x\",\"sizes\":[],\"latitude\":0,\"longitude\":0,\"kid\":\"6286a7faf2b4535e91b56bb274e852a7\",\"sizes2\":[[\"s\",\"bb5d0eb6646ccfd237611b4f79106b00e2d032e6d0f17b39d348aea9\",\"-4082427985236594021\",75,54],[\"m\",\"be48c4b9880a9123e6544a82e697daf37d6f454ef253db7c2b0af418\",\"-2932524278446245220\",130,93],[\"x\",\"e61471493aa1eeaeb77266982b59068003db5ea1431dfda00c9f092a\",\"-1840332818567957872\",266,190],[\"o\",\"be48c4b9880a9123e6544a82e697daf37d6f454ef253db7c2b0af418\",\"-2932524278446245220\",130,93],[\"p\",\"e9b102f1cd04eb16bbd97a863842ca55bd506eee00dd5e78ed360b82\",\"8592074208988106031\",200,143],[\"q\",\"1d5a67aaabf1961a425cd2ec3b26d03c76a0d0b0055cc1c21c7cd0c6\",\"-994525861477540241\",266,190],[\"r\",\"1d5a67aaabf1961a425cd2ec3b26d03c76a0d0b0055cc1c21c7cd0c6\",\"-994525861477540241\",266,190]],\"urls\":[],\"urls2\":[\"u10OtmRsz9I3YRtPeRBrAOLQMubQ8Xs500iuqQ\/m_LbhmBNWMc.jpg\",\"vkjEuYgKkSPmVEqC5pfa831vRU7yU9t8Kwr0GA\/nLoAuLSUTdc.jpg\",\"5hRxSTqh7q63cmaYK1kGgAPbXqFDHf2gDJ8JKg\/kHLDUA3TdeY.jpg\",\"vkjEuYgKkSPmVEqC5pfa831vRU7yU9t8Kwr0GA\/nLoAuLSUTdc.jpg\",\"6bEC8c0E6xa72XqGOELKVb1Qbu4A3V547TYLgg\/Lw2IZvgtPXc.jpg\",\"HVpnqqvxlhpCXNLsOybQPHag0LAFXMHCHHzQxg\/bx6xiv-7MvI.jpg\",\"HVpnqqvxlhpCXNLsOybQPHag0LAFXMHCHHzQxg\/bx6xiv-7MvI.jpg\"],\"peer_id\":171330601}]","hash":"accf70c9182511ad6de0b79d3c13252b"}
+00:42:38 [_bot_uploadVoiceMessage] : [ERROR] /var/www/audio/audio_53b88f970b767dd2073b69296e2a3894.ogg
+00:42:38 [vkApi_upload] : [ERROR] {"error":"empty_file","error_descr":"empty_file","error_is_logged":false}
+00:42:38 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: file is undefined","request_params":[{"key":"title","value":"Voice message"},{"key":"v","value":"5.131"},{"key":"method","value":"docs.save"},{"key":"oauth","value":"1"}]}}
+00:42:38 [callback_handleEvent] : [ERROR] Exception: Invalid response for docs.save request in /var/www/api/vk_api.php:69
+Stack trace:
+#0 /var/www/api/vk_api.php(44): _vkApi_call()
+#1 /var/www/bot/bot.php(43): vkApi_docsSave()
+#2 /var/www/bot/bot.php(11): _bot_uploadVoiceMessage()
+#3 /var/www/index.php(56): bot_sendMessage()
+#4 /var/www/index.php(32): _callback_handleMessageNew()
+#5 /var/www/index.php(18): callback_handleEvent()
+#6 {main}
+00:53:09 [vkApi_upload] : [ERROR] {"server":843528,"photo":"[{\"markers_restarted\":true,\"photo\":\"7a1ba54d04:x\",\"sizes\":[],\"latitude\":0,\"longitude\":0,\"kid\":\"6286a7faf2b4535e91b56bb274e852a7\",\"sizes2\":[[\"s\",\"bb5d0eb6646ccfd237611b4f79106b00e2d032e6d0f17b39d348aea9\",\"-4082427985236594021\",75,54],[\"m\",\"be48c4b9880a9123e6544a82e697daf37d6f454ef253db7c2b0af418\",\"-2932524278446245220\",130,93],[\"x\",\"e61471493aa1eeaeb77266982b59068003db5ea1431dfda00c9f092a\",\"-1840332818567957872\",266,190],[\"o\",\"be48c4b9880a9123e6544a82e697daf37d6f454ef253db7c2b0af418\",\"-2932524278446245220\",130,93],[\"p\",\"e9b102f1cd04eb16bbd97a863842ca55bd506eee00dd5e78ed360b82\",\"8592074208988106031\",200,143],[\"q\",\"1d5a67aaabf1961a425cd2ec3b26d03c76a0d0b0055cc1c21c7cd0c6\",\"-994525861477540241\",266,190],[\"r\",\"1d5a67aaabf1961a425cd2ec3b26d03c76a0d0b0055cc1c21c7cd0c6\",\"-994525861477540241\",266,190]],\"urls\":[],\"urls2\":[\"u10OtmRsz9I3YRtPeRBrAOLQMubQ8Xs500iuqQ\/m_LbhmBNWMc.jpg\",\"vkjEuYgKkSPmVEqC5pfa831vRU7yU9t8Kwr0GA\/nLoAuLSUTdc.jpg\",\"5hRxSTqh7q63cmaYK1kGgAPbXqFDHf2gDJ8JKg\/kHLDUA3TdeY.jpg\",\"vkjEuYgKkSPmVEqC5pfa831vRU7yU9t8Kwr0GA\/nLoAuLSUTdc.jpg\",\"6bEC8c0E6xa72XqGOELKVb1Qbu4A3V547TYLgg\/Lw2IZvgtPXc.jpg\",\"HVpnqqvxlhpCXNLsOybQPHag0LAFXMHCHHzQxg\/bx6xiv-7MvI.jpg\",\"HVpnqqvxlhpCXNLsOybQPHag0LAFXMHCHHzQxg\/bx6xiv-7MvI.jpg\"],\"peer_id\":171330601}]","hash":"c30119ae170553477aac895a1f29fff2"}
+00:53:10 [_bot_uploadVoiceMessage] : [ERROR] /var/www/audio/audio_53b88f970b767dd2073b69296e2a3894.ogg
+00:53:10 [vkApi_upload] : [ERROR] {"error":"empty_file","error_descr":"empty_file","error_is_logged":false}
+00:53:10 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: file is undefined","request_params":[{"key":"title","value":"Voice message"},{"key":"v","value":"5.131"},{"key":"method","value":"docs.save"},{"key":"oauth","value":"1"}]}}
+00:53:10 [callback_handleEvent] : [ERROR] Exception: Invalid response for docs.save request in /var/www/api/vk_api.php:69
+Stack trace:
+#0 /var/www/api/vk_api.php(44): _vkApi_call()
+#1 /var/www/bot/bot.php(43): vkApi_docsSave()
+#2 /var/www/bot/bot.php(11): _bot_uploadVoiceMessage()
+#3 /var/www/index.php(56): bot_sendMessage()
+#4 /var/www/index.php(32): _callback_handleMessageNew()
+#5 /var/www/index.php(18): callback_handleEvent()
+#6 {main}

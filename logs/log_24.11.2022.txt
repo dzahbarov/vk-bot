@@ -1,0 +1,27 @@
+19:03:11 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: random_id is a required parameter","request_params":[{"key":"peer_id","value":"171330601"},{"key":"v","value":"5.131"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+19:03:11 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/api/vk_api.php:68
+Stack trace:
+#0 /var/www/api/vk_api.php(9): _vkApi_call()
+#1 /var/www/bot/bot.php(18): vkApi_messagesSend()
+#2 /var/www/index.php(56): bot_sendMessage()
+#3 /var/www/index.php(32): _callback_handleMessageNew()
+#4 /var/www/index.php(18): callback_handleEvent()
+#5 {main}
+19:11:49 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: random_id is a required parameter","request_params":[{"key":"peer_id","value":"171330601"},{"key":"random_iny","value":"671838968"},{"key":"v","value":"5.131"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+19:11:49 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/api/vk_api.php:69
+Stack trace:
+#0 /var/www/api/vk_api.php(10): _vkApi_call()
+#1 /var/www/bot/bot.php(18): vkApi_messagesSend()
+#2 /var/www/index.php(56): bot_sendMessage()
+#3 /var/www/index.php(32): _callback_handleMessageNew()
+#4 /var/www/index.php(18): callback_handleEvent()
+#5 {main}
+19:13:50 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: random_id is a required parameter","request_params":[{"key":"peer_id","value":"171330601"},{"key":"random_int","value":"1396362535"},{"key":"v","value":"5.131"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+19:13:50 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/api/vk_api.php:69
+Stack trace:
+#0 /var/www/api/vk_api.php(10): _vkApi_call()
+#1 /var/www/bot/bot.php(18): vkApi_messagesSend()
+#2 /var/www/index.php(56): bot_sendMessage()
+#3 /var/www/index.php(32): _callback_handleMessageNew()
+#4 /var/www/index.php(18): callback_handleEvent()
+#5 {main}

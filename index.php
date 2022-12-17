@@ -62,7 +62,7 @@ function _callback_handleMessageNew($data)
 
     $payload = null;
 
-    bot_sendMessage($user_id, $data['message']['payload']);
+//    bot_sendMessage($user_id, $data['message']['payload']);
 
     if (isset($data['message']['payload'])) {
         bot_sendMessage($user_id, "-2");
@@ -77,7 +77,7 @@ function _callback_handleMessageNew($data)
     }
 
     bot_sendMessage($user_id, "-1");
-    if ($payload != null && $payload['button'] == "2") {
+    if ($payload != null && $payload->button == "2") {
         bot_sendMessage($user_id, "0");
         $exams = get_exams($user_id, $group_id);
         bot_sendMessage($user_id, "1");

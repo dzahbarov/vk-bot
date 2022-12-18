@@ -1,28 +1,38 @@
 {
-  "one_time":false,
-  "buttons":[
+  "one_time": false,
+  "buttons": [
+    [
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"sch_today\"}",
+          "label": "На сегодня"
+        },
+        "color": "primary"
+      },
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"sch_tomorrow\"}",
+          "label": "На завтра"
+        },
+        "color": "primary"
+      },
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"sch_week\"}",
+          "label": "На неделю"
+        },
+        "color": "primary"
+      }
+    ],
     [
       {
         "action":{
           "type":"text",
-          "payload":"{\"button\": \"sch_today\"}",
-          "label":"На сегодня"
-        },
-        "color":"primary"
-      },
-      {
-        "action":{
-          "type":"text",
-          "payload":"{\"button\": \"sch_tomorrow\"}",
-          "label":"На завтра"
-        },
-        "color":"primary"
-      },
-      {
-        "action":{
-          "type":"text",
-          "payload":"{\"button\": \"sch_week\"}",
-          "label":"На неделю"
+          "payload":"{\"button\": \"Main\"}",
+          "label":"На главную"
         },
         "color":"primary"
       }

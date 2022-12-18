@@ -88,8 +88,6 @@ function _callback_handleMessageNew($data)
     }
 
 
-
-
     bot_sendMessage($user_id, "-1");
     if ($payload != null && $payload->button == "session") {
         bot_sendMessage($user_id, "0");
@@ -103,18 +101,15 @@ function _callback_handleMessageNew($data)
         vkApi_messagesSend($user_id, $ans);
     }
 
+    if ($payload != null && $payload->button == "Main") {
+        $key = json_decode(file_get_contents("bot/test.json"), true);
+        vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
+    }
+
     if ($payload != null && $payload->button == "sch") {
         $key = json_decode(file_get_contents("bot/schedule_select.json"), true);
         vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
         exit();
-//        $exams = get_exams($user_id, $group_id);
-//        bot_sendMessage($user_id, "1");
-//        $ans = "";
-//        foreach ($exams as $exam) {
-//            $ans = $ans . $exam['subject_name'] . ' ' .  $exam['ts'] . "\n";
-//        }
-//
-//        vkApi_messagesSend($user_id, $ans);
     }
 
     if ($payload != null && $payload->button == "subjects") {

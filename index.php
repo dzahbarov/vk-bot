@@ -116,7 +116,7 @@ function _callback_handleMessageNew($data)
             $array[] = [["action" => [
                 "type" => "open_link",
                 "link" => $subject['link'],
-                "payload" => "{\"button\": \"tt\"}",
+                "payload" => "",
                 "label" => $subject['link_name']],
                 "color" => "default"]];
         }
@@ -127,7 +127,7 @@ function _callback_handleMessageNew($data)
             "buttons" => $array
         ];
 
-        vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
+        vkApi_messagesSendWithKeyboardTest($user_id, "Hi. your group " . $group_id, $key);
         exit();
     }
 

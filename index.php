@@ -19,7 +19,6 @@ if (!isset($_REQUEST)) {
     exit;
 }
 
-
 callback_handleEvent();
 
 function callback_handleEvent()
@@ -60,12 +59,15 @@ function _callback_handleConfirmation()
 
 function _callback_handleMessageNew($data)
 {
+
+    $user_id = $data['message']['from_id'];
+    bot_sendMessage($user_id, "1");
     $examDao = new ExamDao();
     $scheduleDao = new ScheduleDao();
     $subjectDao = new SubjectDao();
     $groupDao = new GroupDao();
 
-    $user_id = $data['message']['from_id'];
+    bot_sendMessage($user_id, "3");
 
     $payload = null;
 

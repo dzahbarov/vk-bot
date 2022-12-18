@@ -116,7 +116,7 @@ function _callback_handleMessageNew($data)
             $array[] = [["action" => [
                 "type" => "open_link",
                 "link" => $subject['link'],
-                "payload" => '',
+                "payload" => "{\"button\": \"tt\"}",
                 "label" => $subject['link_name']],
                 "color" => "default"]];
         }

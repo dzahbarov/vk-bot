@@ -1,11 +1,11 @@
 <?php
 
-define('CALLBACK_API_EVENT_CONFIRMATION', 'confirmation');
-define('CALLBACK_API_EVENT_MESSAGE_NEW', 'message_new');
+const CALLBACK_API_EVENT_CONFIRMATION = 'confirmation';
+const CALLBACK_API_EVENT_MESSAGE_NEW = 'message_new';
 
 require_once 'config.php';
 require_once 'global.php';
-require_once 'bot/bot.php';
+require_once 'bot/Bot.php';
 
 if (!isset($_REQUEST)) {
     exit;
@@ -13,7 +13,7 @@ if (!isset($_REQUEST)) {
 
 callback_handleEvent();
 
-function callback_handleEvent()
+function callback_handleEvent(): void
 {
     $event = _callback_getEvent();
     try {

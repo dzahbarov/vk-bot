@@ -79,6 +79,8 @@ class Bot
                     break;
             }
         }
+
+        $this->vk_api->sendMessage($user_id, 1199);
         $this->showMainPage($user_id);
     }
 

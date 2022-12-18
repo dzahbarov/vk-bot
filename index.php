@@ -65,8 +65,6 @@ function _callback_handleMessageNew($data)
 
     $payload = null;
 
-//    bot_sendMessage($user_id, $data['message']['payload']);
-
     if (isset($data['message']['payload'])) {
         bot_sendMessage($user_id, "-2");
         $payload = json_decode($data['message']['payload']);
@@ -88,16 +86,12 @@ function _callback_handleMessageNew($data)
     }
 
 
-    bot_sendMessage($user_id, "-1");
     if ($payload != null && $payload->button == "session") {
-        bot_sendMessage($user_id, "0");
         $exams = get_exams($user_id, $group_id);
-        bot_sendMessage($user_id, "1");
         $ans = "";
         foreach ($exams as $exam) {
             $ans = $ans . $exam['subject_name'] . ' ' .  $exam['ts'] . "\n";
         }
-
         vkApi_messagesSend($user_id, $ans);
     }
 
@@ -113,10 +107,7 @@ function _callback_handleMessageNew($data)
     }
 
     if ($payload != null && $payload->button == "subjects") {
-        bot_sendMessage($user_id, "035897937");
         $subjects = get_subjects($user_id, $group_id);
-        bot_sendMessage($user_id, "1");
-
         $array = array();
         foreach ($subjects as $subject) {
             $array[] = [["action" => [
@@ -125,30 +116,26 @@ function _callback_handleMessageNew($data)
                 "label" => $subject['subject_name']],
                 "color" => "default"]];
         }
-        bot_sendMessage($user_id, "ebaa");
+        $array[] = [["action" => [
+            "type" => "text",
+            "payload" => "{\"button\": \"Main\"}",
+            "label" => "На главную"],
+            "color" => "default"]];
 
         $key = [
             "one_time" => false,
             "buttons" => $array
         ];
 
-//        bot_sendMessage($user_id, json_encode($key));
-
         vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
         exit();
     }
 
-    bot_sendMessage($user_id, $payload->button);
-//    bot_sendMessage($user_id, str_starts_with($payload->button, 'Subject') ? 'true' : 'false');
-//    bot_sendMessage($user_id, str_starts_with($payload->button, "Subject") ? 'true' : 'false');
     if ($payload != null && strpos($payload->button, 'Subject') === 0) {
-        bot_sendMessage($user_id, 33);
         $args = explode(" ", $payload->button);
         $subject_id = end($args);
 
-//        bot_sendMessage($user_id, "035897937");
         $subjects = get_useful_links($user_id, $subject_id);
-        bot_sendMessage($user_id, "1");
 
         $array = array();
         foreach ($subjects as $subject) {
@@ -159,7 +146,12 @@ function _callback_handleMessageNew($data)
                 "label" => $subject['link_name']]
             ]];
         }
-        bot_sendMessage($user_id, "ebaa");
+
+        $array[] = [["action" => [
+            "type" => "text",
+            "payload" => "{\"button\": \"Main\"}",
+            "label" => "На главную"],
+            "color" => "default"]];
 
         $key = [
             "one_time" => false,
@@ -174,12 +166,6 @@ function _callback_handleMessageNew($data)
     $key = json_decode(file_get_contents("bot/test.json"), true);
     vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
 
-
-//    $key = "{  \n   \"one_time\":false,\n   \"buttons\":[  \n      [  \n         {  \n            \"action\":{  \n               \"type\":\"location\",\n               \"payload\":\"{\\\"button\\\": \\\"1\\\"}\"\n            }\n         }\n      ],\n      [  \n         {  \n            \"action\":{  \n               \"type\":\"open_app\",\n               \"app_id\":6232540,\n               \"owner_id\":-157525928,\n               \"hash\":\"123\",\n               \"label\":\"LiveWidget\"\n            }\n         }\n      ],\n      [  \n         {  \n            \"action\":{  \n               \"type\":\"vkpay\",\n               \"hash\":\"action=transfer-to-group&group_id=181108510&aid=10\"\n            }\n         }\n      ],\n      [  \n         {  \n            \"action\":{  \n               \"type\":\"text\",\n               \"payload\":\"{\\\"button\\\": \\\"1\\\"}\",\n               \"label\":\"Red\"\n            },\n            \"color\":\"negative\"\n         },\n         {  \n            \"action\":{  \n               \"type\":\"text\",\n               \"payload\":\"{\\\"button\\\": \\\"2\\\"}\",\n               \"label\":\"Green\"\n            },\n            \"color\":\"positive\"\n         },\n         {  \n            \"action\":{  \n               \"type\":\"text\",\n               \"payload\":\"{\\\"button\\\": \\\"2\\\"}\",\n               \"label\":\"Blue\"\n            },\n            \"color\":\"primary\"\n         },\n         {  \n            \"action\":{  \n               \"type\":\"text\",\n               \"payload\":\"{\\\"button\\\": \\\"2\\\"}\",\n               \"label\":\"White\"\n            },\n            \"color\":\"secondary\"\n         }\n      ]\n   ]\n}";
-//    $key = json_decode(file_get_contents("bot/test.json"), true);
-//    vkApi_messagesSendWithKeyboard($user_id, "Hi", $key);
-
-//    add_group($user_id, $text);
 
     _callback_okResponse();
 }

@@ -101,8 +101,11 @@ class Bot
 
     private function showMainPage(mixed $user_id): void
     {
+        $this->vk_api->sendMessage($user_id, 111);
         $key = json_decode(file_get_contents("bot/keyboards/main.json"), true);
+        $this->vk_api->sendMessage($user_id, 111222);
         $this->vk_api->sendMessageWithKeyboard($user_id, "Выберите действие", $key);
+        $this->vk_api->sendMessage($user_id, 111333);
         _callback_okResponse();
         exit();
     }

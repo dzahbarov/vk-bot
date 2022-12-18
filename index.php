@@ -101,6 +101,7 @@ function _callback_handleMessageNew($data)
     if ($payload != null && $payload->button == "sch") {
         $key = json_decode(file_get_contents("bot/schedule_select.json"), true);
         vkApi_messagesSendWithKeyboard($user_id, "Выберите дату", $key);
+        _callback_okResponse();
         exit();
     }
 
@@ -154,6 +155,7 @@ function _callback_handleMessageNew($data)
         ];
 
         vkApi_messagesSendWithKeyboard($user_id, "Выберите предмет", $key);
+        _callback_okResponse();
         exit();
     }
 
@@ -186,6 +188,7 @@ function _callback_handleMessageNew($data)
 
 
         vkApi_messagesSendWithKeyboard($user_id, "Выберите то что интересует", $key);
+        _callback_okResponse();
         exit();
     }
 

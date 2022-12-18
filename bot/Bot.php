@@ -28,7 +28,6 @@ class Bot
     {
         $user_id = $data['message']['from_id'];
         $payload = null;
-        $this->vk_api->sendMessage($user_id, 11);
         if (isset($data['message']['payload'])) {
             $payload = json_decode($data['message']['payload']);
         }
@@ -44,10 +43,8 @@ class Bot
         if ($group_id == null) {
             $this->showGroupChoosing($user_id);
         }
-        $this->vk_api->sendMessage($user_id, 22);
-//        $this->vk_api->sendMessage($user_id, $payload->button);
+
         if ($payload != null) {
-            $this->vk_api->sendMessage($user_id, $payload->button);
             switch ($payload->button) {
                 case "Main":
                     $this->showMainPage($user_id);
@@ -75,13 +72,10 @@ class Bot
                     $this->showSubjects($user_id, $group_id);
                     break;
                 case "Subject":
-                    $this->vk_api->sendMessage($user_id, 33);
                     $this->showSubject($payload->subject_id, $user_id);
                     break;
             }
         }
-
-        $this->vk_api->sendMessage($user_id, 1199);
         $this->showMainPage($user_id);
     }
 
@@ -101,11 +95,8 @@ class Bot
 
     private function showMainPage($user_id): void
     {
-        $this->vk_api->sendMessage($user_id, 111);
         $key = json_decode(file_get_contents("bot/keyboards/main.json"), true);
-        $this->vk_api->sendMessage($user_id, 111222);
         $this->vk_api->sendMessageWithKeyboard($user_id, "Выберите действие", $key);
-        $this->vk_api->sendMessage($user_id, 111333);
         _callback_okResponse();
         exit();
     }

@@ -127,7 +127,9 @@ function _callback_handleMessageNew($data)
             "buttons" => $array
         ];
 
-        vkApi_messagesSendWithKeyboardTest($user_id, "Hi. your group " . $group_id, $key);
+        bot_sendMessage($user_id, json_encode($key));
+
+        vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
         exit();
     }
 

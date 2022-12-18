@@ -84,13 +84,23 @@ function _callback_handleMessageNew($data)
         bot_sendMessage($user_id, "1");
         $ans = "";
         foreach ($exams as $exam) {
-//            bot_sendMessage($user_id, "2");
-//            bot_sendMessage($user_id, $exam['subject_name']);
-//            bot_sendMessage($user_id, $ans);
             $ans = $ans . $exam['subject_name'] . ' ' .  $exam['ts'] . "\n";
         }
-//        bot_sendMessage($user_id, "3");
+
         vkApi_messagesSend($user_id, $ans);
+    }
+
+    if ($payload != null && $payload->button == "1") {
+        $key = json_decode(file_get_contents("bot/schedule_select.json"), true);
+        vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
+//        $exams = get_exams($user_id, $group_id);
+//        bot_sendMessage($user_id, "1");
+//        $ans = "";
+//        foreach ($exams as $exam) {
+//            $ans = $ans . $exam['subject_name'] . ' ' .  $exam['ts'] . "\n";
+//        }
+//
+//        vkApi_messagesSend($user_id, $ans);
     }
 
 

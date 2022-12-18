@@ -1,0 +1,31 @@
+{
+  "one_time":false,
+  "buttons":[
+    [
+      {
+        "action":{
+          "type":"text",
+          "payload":"{\"button\": \"1\"}",
+          "label":"На сегодня"
+        },
+        "color":"primary"
+      },
+      {
+        "action":{
+          "type":"text",
+          "payload":"{\"button\": \"2\"}",
+          "label":"На завтра"
+        },
+        "color":"primary"
+      },
+      {
+        "action":{
+          "type":"text",
+          "payload":"{\"button\": \"3\"}",
+          "label":"На неделю"
+        },
+        "color":"primary"
+      }
+    ]
+  ]
+}

@@ -109,6 +109,7 @@ function _callback_handleMessageNew($data)
     if ($payload != null && $payload->button == "sch_today") {
         $date = new DateTime();
         $weekday = (int) $date->format('N');
+        bot_sendMessage($user_id, 'weekday' . $weekday);
         $res = help($user_id, $group_id, $weekday);
         vkApi_messagesSend($user_id, $res);
     }

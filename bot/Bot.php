@@ -73,6 +73,7 @@ class Bot
                     $this->showSubjects($user_id, $group_id);
                     break;
                 case "Subject":
+                    $this->vk_api->sendMessage($user_id, 33);
                     $this->showSubject($payload->subject_id, $user_id);
                     break;
             }

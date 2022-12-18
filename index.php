@@ -116,7 +116,7 @@ function _callback_handleMessageNew($data)
 
     if ($payload != null && $payload->button == "sch_tomorrow") {
         $date = new DateTime();
-        $data->modify('+1 day');
+        $date->modify('+1 day');
         $weekday = (int) $date->format('N');
         $res = help($user_id, $group_id, $weekday);
         vkApi_messagesSend($user_id, $res);

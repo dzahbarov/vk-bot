@@ -80,7 +80,7 @@ function _callback_handleMessageNew($data)
 
     if ($group_id == null) {
         $key = json_decode(file_get_contents("bot/add_group.json"), true);
-        vkApi_messagesSendWithKeyboardW($user_id,  $key);
+        vkApi_messagesSendWithKeyboard($user_id, "Выберите группу", $key);
         _callback_okResponse();
     }
 
@@ -96,12 +96,12 @@ function _callback_handleMessageNew($data)
 
     if ($payload != null && $payload->button == "Main") {
         $key = json_decode(file_get_contents("bot/test.json"), true);
-        vkApi_messagesSendWithKeyboardW($user_id,  $key);
+        vkApi_messagesSendWithKeyboard($user_id, "Выберите действие", $key);
     }
 
     if ($payload != null && $payload->button == "sch") {
         $key = json_decode(file_get_contents("bot/schedule_select.json"), true);
-        vkApi_messagesSendWithKeyboardW($user_id,  $key);
+        vkApi_messagesSendWithKeyboard($user_id, "Выберите дату", $key);
         exit();
     }
 
@@ -154,7 +154,7 @@ function _callback_handleMessageNew($data)
             "buttons" => $array
         ];
 
-        vkApi_messagesSendWithKeyboardW($user_id, $key);
+        vkApi_messagesSendWithKeyboard($user_id, "Выберите предмет", $key);
         exit();
     }
 
@@ -186,12 +186,12 @@ function _callback_handleMessageNew($data)
         ];
 
 
-        vkApi_messagesSendWithKeyboardW($user_id, $key);
+        vkApi_messagesSendWithKeyboard($user_id, "Выберите то что интересует", $key);
         exit();
     }
 
     $key = json_decode(file_get_contents("bot/test.json"), true);
-    vkApi_messagesSendWithKeyboardW($user_id, $key);
+    vkApi_messagesSendWithKeyboard($user_id, "Выберите действие", $key);
 
 
     _callback_okResponse();

@@ -1,9 +1,9 @@
 <?php
 
-namespace dao;
+//namespace dao;
 
-use PDO;
-use PDOException;
+//use PDO;
+//use PDOException;
 
 class ExamDao  {
     public function get_exams($group_id) {

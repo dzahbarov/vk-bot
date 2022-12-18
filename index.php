@@ -1,6 +1,6 @@
 <?php
 
-//use dao\ExamDao;
+use dao\ExamDao;
 use dao\GroupDao;
 use dao\ScheduleDao;
 use dao\SubjectDao;
@@ -21,6 +21,7 @@ require_once 'bot/bot.php';
 if (!isset($_REQUEST)) {
     exit;
 }
+
 $examDao = new ExamDao();
 
 callback_handleEvent($examDao);

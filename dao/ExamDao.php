@@ -5,8 +5,11 @@
 //use PDO;
 //use PDOException;
 
-class ExamDao  {
-    public function get_exams() {
+namespace dao;
+class ExamDao
+{
+    public function get_exams()
+    {
         return "11";
 //        $servername = "localhost";
 //        $username = "bot";

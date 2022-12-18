@@ -1,5 +1,9 @@
 <?php
 
+namespace dao;
+
+use Exception;
+
 class GroupDao extends AbstractDao {
 
     public function add_group($user_id, $group_id) {

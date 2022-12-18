@@ -1,4 +1,5 @@
 <?php
+namespace dao;
 
 class SubjectDao extends AbstractDao {
     function get_subjects($user_id, $group_id) {

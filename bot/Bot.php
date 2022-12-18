@@ -44,7 +44,7 @@ class Bot
         if ($group_id == null) {
             $this->showGroupChoosing($user_id);
         }
-
+        $this->vk_api->sendMessage($user_id, 22);
         if ($payload != null) {
             switch ($payload->button) {
                 case "Main":

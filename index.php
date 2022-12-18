@@ -106,6 +106,20 @@ function _callback_handleMessageNew($data)
         exit();
     }
 
+    if ($payload != null && $payload->button == "sch_today") {
+        $date = new DateTime();
+        $weekday = (int) $date->format('N');
+        $res = help($user_id, $group_id, $weekday);
+        vkApi_messagesSend($user_id, $res);
+    }
+
+    if ($payload != null && $payload->button == "sch_tomorrow") {
+        $date = new DateTime();
+        $weekday = ((int) $date->format('N')) + 1;
+        $res = help($user_id, $group_id, $weekday);
+        vkApi_messagesSend($user_id, $res);
+    }
+
     if ($payload != null && $payload->button == "subjects") {
         $subjects = get_subjects($user_id, $group_id);
         $array = array();
@@ -168,6 +182,16 @@ function _callback_handleMessageNew($data)
 
 
     _callback_okResponse();
+}
+
+function help($user_id, $group_id, $weekday)
+{
+    $schedule = get_schedule($user_id, $group_id, $weekday);
+    $ans = "";
+    foreach ($schedule as $class) {
+        $ans = $ans . $class['start_class'] . '-' . $class['end_class'] . ' ' . $class['subject_name'] . "\n";
+    }
+    return $ans;
 }
 
 function _callback_okResponse()

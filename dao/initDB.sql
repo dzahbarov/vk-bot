@@ -42,7 +42,7 @@ create table Schedule
 (
     schedule_id int AUTO_INCREMENT PRIMARY KEY,
     group_id int,
-    weekday char(3),
+    weekday int,
     class1_id int,
     class2_id int,
     class3_id int,
@@ -145,11 +145,11 @@ insert into Classes(subject_id, start_class, end_class) values
 
 # 8:20 10:00 11:40 13:30 15:20 17:00 18:40 20:00
 insert into Schedule(group_id, weekday, class1_id, class2_id, class3_id, class4_id, class5_id, class6_id, class7_id) values
-    (1, 'Mon', null, null, 1, null, 2, 3, 4),
-    (1, 'Tue', null, null, null, 5, 6, 7, null),
-    (1, 'Wed', null, null, null, null, null, 8, null),
-    (1, 'Thu', null, null, 9, null, null, null, null),
-    (1, 'Fri', null, null, 10, 11, null, null, null);
+    (1, 1, null, null, 1, null, 2, 3, 4),
+    (1, 2, null, null, null, 5, 6, 7, null),
+    (1, 3, null, null, null, null, null, 8, null),
+    (1, 4, null, null, 9, null, null, null, null),
+    (1, 5, null, null, 10, 11, null, null, null);
 
 
 

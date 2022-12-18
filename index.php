@@ -104,6 +104,30 @@ function _callback_handleMessageNew($data)
 //        vkApi_messagesSend($user_id, $ans);
     }
 
+    if ($payload != null && $payload->button == "subjects") {
+        bot_sendMessage($user_id, "0");
+        $subjects = get_subjects($user_id, $group_id);
+        bot_sendMessage($user_id, "1");
+
+        $array = array();
+        foreach ($subjects as $subject) {
+            $array[] = [["action" => [
+                "type" => "open_link",
+                "link" => $subject['link'],
+                "payload" => '',
+                "label" => $subject['link_name']],
+                "color" => "default"]];
+        }
+
+        $key = [
+            "one_time" => false,
+            "buttons" => $array
+        ];
+
+        vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
+        exit();
+    }
+
 
     $key = json_decode(file_get_contents("bot/test.json"), true);
     vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);

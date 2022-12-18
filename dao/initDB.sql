@@ -24,9 +24,18 @@ create table Exams
 create table Subjects
 (
     subject_id int AUTO_INCREMENT PRIMARY KEY,
+    group_id int,
     subject_name varchar(50),
     lector varchar(50),
     location varchar(30)
+);
+
+create table Useful
+(
+    useful_id int AUTO_INCREMENT PRIMARY KEY,
+    subject_id int,
+    link_name varchar(30),
+    link varchar(300)
 );
 
 create table Schedule
@@ -53,6 +62,10 @@ create table Classes
 alter table Students
     add constraint student_group_id
     foreign key (group_id) references `Groups`(group_id);
+
+alter table Useful
+    add constraint useful_subject_id
+        foreign key (subject_id) references `Subjects`(subject_id);
 
 alter table Exams
     add constraint exams_subject_id
@@ -97,6 +110,19 @@ insert into Subjects(subject_name, lector) values
     ('Функциональное программирование', 'Serokell'),
     ('PHP', 'VK'),
     ('Blockchain', 'MixBytes');
+
+insert into Useful(subject_id, link_name, link) values
+    (1, 'Баллы', 'https://docs.google.com/spreadsheets/d/1Cn1fWDoC1ne5d7t2pUqclGz1GUjNpP1fhbsBiG_foYk/edit#gid=0'),
+    (1, 'ДЗ', 'https://docs.google.com/document/d/1OdHJx-kvXNpOGftdtrCyaEwjkpv1oUYem6oimooG-s4/edit'),
+    (1, 'Диск', 'https://drive.google.com/drive/folders/1CmGahekj04g2uLT23NUnX-wkVz-aRwym'),
+    (1, 'YouTube', 'https://www.youtube.com/playlist?list=PLI83Pf8BmFlcEfss4dyvSNWi93DNsax0A'),
+    (1, 'Очередь', 'https://docs.google.com/spreadsheets/d/1JxoqzW5IHN6wAAINscxzurRrFAlKwK_gqxtUm2FMeM4/edit#gid=0'),
+    (1, 'Запись', 'https://docs.google.com/forms/d/e/1FAIpQLScANJzu0QjcVsozYsS6EIfYpceYNzyYNJq-gX_Sp-qTsQ8S-g/viewform?fbzx=6377123029332474254'),
+    (2, 'Баллы', 'https://docs.google.com/spreadsheets/d/1FdhCgw2IT96Q2J29YjGcEf4E6De5MFGOIaoH1kAMn0w/edit#gid=0'),
+    (2, 'Лабы', 'https://nerc.itmo.ru/teaching/parsing/2022-2023/'),
+    (2, 'Запись', 'https://docs.google.com/forms/d/e/1FAIpQLSdvC0YY78X9sw6JOJvHWzXMdXmQIpOevGQwHTL16ZARrZ9qLQ/closedform'),
+    (2, 'Очередь', 'https://docs.google.com/spreadsheets/d/1YcKtgojqni5Rs8oQgbdoHmlyncCjSS3Cj8IxHmcc5uE/edit'),
+    (2, 'YouTube', 'https://www.youtube.com/playlist?list=PLd7QXkfmSY7bc0bOAj5AL12WdkJz9aXFM');
 
 insert into Exams(group_id, subject_id, ts) values
     (1, 2, '2022-01-13'),

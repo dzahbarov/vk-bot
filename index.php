@@ -61,7 +61,6 @@ function _callback_handleConfirmation()
 function _callback_handleMessageNew($data)
 {
     $user_id = $data['message']['from_id'];
-    $text = $data['message']['text'];
 
     $payload = null;
 
@@ -204,6 +203,10 @@ function _callback_handleMessageNew($data)
 function help($user_id, $group_id, $weekday)
 {
     $schedule = get_schedule($user_id, $group_id, $weekday);
+
+    if(empty($schedule)) {
+        return "В этот день нет пар";
+    }
     $ans = "";
     foreach ($schedule as $class) {
         $ans = $ans . $class['start_class'] . '-' . $class['end_class'] . ' ' . $class['subject_name'] . "\n";

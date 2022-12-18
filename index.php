@@ -150,8 +150,8 @@ function _callback_handleMessageNew($data)
                 "type" => "open_link",
                 "link" => $subject['link'],
                 "payload" => "",
-                "label" => $subject['link_name']],
-                "color" => "primary"]];
+                "label" => $subject['link_name']]
+            ]];
         }
         bot_sendMessage($user_id, "ebaa");
 

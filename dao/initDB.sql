@@ -40,6 +40,7 @@ create table Useful
 
 create table Schedule
 (
+    schedule_id int AUTO_INCREMENT PRIMARY KEY,
     group_id int,
     weekday char(3),
     class1_id int,
@@ -129,12 +130,27 @@ insert into Exams(group_id, subject_id, ts) values
     (1, 3, '2022-01-17'),
     (1, 4, '2022-01-23');
 
-# insert into Classes(subject_id, start_class, end_class) values
-#     (4, '11:40:00', '13:10:00'),
-#     (4, '15:20:00', '16:40:00'),
-#     (3, '17:00:00', '18:20:00'),
-#     (3, '18:40:00', '20:00:00')
-#     (2, '13:30:')
+insert into Classes(subject_id, start_class, end_class) values
+    (4, '11:40:00', '13:10:00'),
+    (4, '15:20:00', '16:50:00'),
+    (3, '17:00:00', '18:30:00'),
+    (3, '18:40:00', '20:10:00'),
+    (2, '13:30:00', '15:00:00'),
+    (1, '15:20:00', '16:50:00'),
+    (1, '17:00:00', '18:30:00'),
+    (6, '17:00:00', '18:30:00'),
+    (7, '12:00:00', '13:30:00'),
+    (5, '11:40:00', '13:10:00'),
+    (5, '13:30:00', '15:00:00');
+
+# 8:20 10:00 11:40 13:30 15:20 17:00 18:40 20:00
+insert into Schedule(group_id, weekday, class1_id, class2_id, class3_id, class4_id, class5_id, class6_id, class7_id) values
+    (1, 'Mon', null, null, 1, null, 2, 3, 4),
+    (1, 'Tue', null, null, null, 5, 6, 7, null),
+    (1, 'Wed', null, null, null, null, null, 8, null),
+    (1, 'Thu', null, null, 9, null, null, null, null),
+    (1, 'Fri', null, null, 10, 11, null, null, null);
+
 
 
 

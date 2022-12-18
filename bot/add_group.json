@@ -5,8 +5,8 @@
       {
         "action":{
           "type":"text",
-          "payload":"{\"button\": \"1\"}",
-          "label":"Укажите группу"
+          "payload":"{\"button\": \"Group 1\"}",
+          "label":"M33371"
         },
         "color":"primary"
       }

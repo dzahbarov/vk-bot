@@ -129,8 +129,6 @@ insert into Exams(group_id, subject_id, ts) values
     (1, 3, '2022-01-17'),
     (1, 4, '2022-01-23');
 
-insert into Students values (171330601, 1);
-
 # insert into Classes(subject_id, start_class, end_class) values
 #     (4, '11:40:00', '13:10:00'),
 #     (4, '15:20:00', '16:40:00'),

@@ -1,6 +1,6 @@
 <?php
 
-function add_group($user_id, $group_name)
+function add_group($user_id, $group_id)
 {
     $servername = "localhost";
     $username = "bot";
@@ -15,10 +15,10 @@ function add_group($user_id, $group_name)
         bot_sendMessage($user_id, $e->getMessage());
         echo "Connection failed: " . $e->getMessage();
     }
-    $stmt = $conn->prepare("INSERT INTO group_table (user_vk_id, group_name) VALUES (:user_vk_id,:group_name)");
+    $stmt = $conn->prepare("INSERT INTO Students (user_vk_id, group_id) VALUES (:user_vk_id,:group_id)");
     $stmt->execute([
         'user_vk_id' => $user_id,
-        'group_name' => $group_name
+        'group_id' => $group_id
     ]);
 }
 

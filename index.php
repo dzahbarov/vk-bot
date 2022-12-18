@@ -79,6 +79,15 @@ function _callback_handleMessageNew($data)
         _callback_okResponse();
     }
 
+    if ($payload != null && strpos($payload->button, 'Group') === 0) {
+        bot_sendMessage($user_id, 33);
+        $args = explode(" ", $payload->button);
+        $group_id = end($args);
+        add_group($user_id, $group_id);
+        bot_sendMessage($user_id, "Группа установлена!");
+    }
+
+
     bot_sendMessage($user_id, "-1");
     if ($payload != null && $payload->button == "session") {
         bot_sendMessage($user_id, "0");

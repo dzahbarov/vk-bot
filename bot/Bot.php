@@ -45,8 +45,9 @@ class Bot
             $this->showGroupChoosing($user_id);
         }
         $this->vk_api->sendMessage($user_id, 22);
-        $this->vk_api->sendMessage($user_id, $payload->button);
+//        $this->vk_api->sendMessage($user_id, $payload->button);
         if ($payload != null) {
+            $this->vk_api->sendMessage($user_id, $payload->button);
             switch ($payload->button) {
                 case "Main":
                     $this->showMainPage($user_id);

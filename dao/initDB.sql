@@ -60,13 +60,26 @@ create table Classes
   end_class Time
 );
 
-alter table Students
-    add constraint student_group_id
-    foreign key (group_id) references `Groups`(group_id);
+alter table Subjects
+    add constraint subject_group_id
+        foreign key (group_id) references `Groups`(group_id);
 
 alter table Useful
     add constraint useful_subject_id
         foreign key (subject_id) references `Subjects`(subject_id);
+
+alter table Schedule
+    add constraint schedule_group_id
+        foreign key (group_id) references `Groups`(group_id);
+
+alter table Classes
+    add constraint classes_subject_id
+        foreign key (subject_id) references `Subjects`(subject_id);
+
+alter table Students
+    add constraint student_group_id
+    foreign key (group_id) references `Groups`(group_id);
+
 
 alter table Exams
     add constraint exams_subject_id

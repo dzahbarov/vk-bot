@@ -6,11 +6,11 @@ define('CALLBACK_API_EVENT_MESSAGE_NEW', 'message_new');
 require_once 'config.php';
 require_once 'global.php';
 
-require_once 'dao/groupDao.php';
+require_once 'dao/GroupDao.php';
 require_once 'api/vk_api.php';
 require_once 'api/yandex_api.php';
 require_once 'dao/scheduleDao.php';
-require_once 'dao/subjectsDao.php';
+require_once 'dao/SubjectDao.php';
 
 
 require_once 'bot/bot.php';
@@ -19,12 +19,12 @@ if (!isset($_REQUEST)) {
     exit;
 }
 
+
 callback_handleEvent();
 
 function callback_handleEvent()
 {
     $event = _callback_getEvent();
-
     try {
         switch ($event['type']) {
             //Подтверждение сервера
@@ -60,6 +60,11 @@ function _callback_handleConfirmation()
 
 function _callback_handleMessageNew($data)
 {
+    $examDao = new ExamDao();
+    $scheduleDao = new ScheduleDao();
+    $subjectDao = new SubjectDao();
+    $groupDao = new GroupDao();
+
     $user_id = $data['message']['from_id'];
 
     $payload = null;
@@ -67,12 +72,12 @@ function _callback_handleMessageNew($data)
     if (isset($data['message']['payload'])) {
         $payload = json_decode($data['message']['payload']);
     }
-    $group_id = get_group($user_id);
+    $group_id = $groupDao->get_group($user_id);
 
     if ($payload != null && strpos($payload->button, 'Group') === 0) {
         $args = explode(" ", $payload->button);
         $group_id = end($args);
-        add_group($user_id, $group_id);
+        $groupDao->add_group($user_id, $group_id);
         bot_sendMessage($user_id, "Группа установлена!");
     }
 
@@ -84,7 +89,7 @@ function _callback_handleMessageNew($data)
 
 
     if ($payload != null && $payload->button == "session") {
-        $exams = get_exams($user_id, $group_id);
+        $exams = $examDao->get_exams($group_id);
         $ans = "";
         foreach ($exams as $exam) {
             $ans = $ans . $exam['subject_name'] . ' ' . $exam['ts'] . "\n";
@@ -109,7 +114,7 @@ function _callback_handleMessageNew($data)
     if ($payload != null && $payload->button == "sch_today") {
         $date = new DateTime();
         $weekday = (int) $date->format('N');
-        $res = help($user_id, $group_id, $weekday);
+        $res = help($user_id, $group_id, $weekday, $scheduleDao);
         vkApi_messagesSend($user_id, $res);
     }
 
@@ -117,7 +122,7 @@ function _callback_handleMessageNew($data)
         $date = new DateTime();
         $date->modify('+1 day');
         $weekday = (int) $date->format('N');
-        $res = help($user_id, $group_id, $weekday);
+        $res = help($user_id, $group_id, $weekday, $scheduleDao);
         vkApi_messagesSend($user_id, $res);
     }
 
@@ -128,14 +133,14 @@ function _callback_handleMessageNew($data)
             $date->modify("+1 day");
             $weekday = (int) $date->format('N');
             $ans = $ans . $date->format('Y-m-d') . "\n";
-            $ans = $ans . help($user_id, $group_id, $weekday) . "\n\n";
+            $ans = $ans . help($user_id, $group_id, $weekday, $scheduleDao) . "\n\n";
         }
 
         vkApi_messagesSend($user_id, $ans);
     }
 
     if ($payload != null && $payload->button == "subjects") {
-        $subjects = get_subjects($user_id, $group_id);
+        $subjects = $subjectDao->get_subjects($user_id, $group_id);
         $array = array();
         foreach ($subjects as $subject) {
             $array[] = [["action" => [
@@ -164,7 +169,7 @@ function _callback_handleMessageNew($data)
         $args = explode(" ", $payload->button);
         $subject_id = end($args);
 
-        $subjects = get_useful_links($user_id, $subject_id);
+        $subjects = $subjectDao->get_useful_links($subject_id);
 
         $array = array();
         foreach ($subjects as $subject) {
@@ -200,9 +205,9 @@ function _callback_handleMessageNew($data)
     _callback_okResponse();
 }
 
-function help($user_id, $group_id, $weekday)
+function help($user_id, $group_id, $weekday, $scheduleDao)
 {
-    $schedule = get_schedule($user_id, $group_id, $weekday);
+    $schedule = $scheduleDao->get_schedule($user_id, $group_id, $weekday);
 
     if(empty($schedule)) {
         return "В этот день нет пар";

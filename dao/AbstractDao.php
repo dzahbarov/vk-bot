@@ -1,9 +1,5 @@
 <?php
 
-namespace dao;
-
-use PDO;
-use PDOException;
 
 abstract class AbstractDao
 {

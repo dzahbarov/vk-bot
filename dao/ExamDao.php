@@ -1,11 +1,6 @@
 <?php
+require_once 'dao/AbstractDao.php';
 
-namespace dao;
-
-//use PDO;
-//use PDOException;
-
-//namespace dao;
 class ExamDao
 {
     public function get_exams()

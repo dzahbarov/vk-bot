@@ -1,8 +1,6 @@
 <?php
 
-namespace dao;
-
-use Exception;
+require_once 'dao/AbstractDao.php';
 
 class GroupDao extends AbstractDao {
 

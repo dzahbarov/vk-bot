@@ -1,6 +1,7 @@
 <?php
+require_once 'dao/AbstractDao.php';
 
-namespace dao;
+//namespace dao;
 class ScheduleDao extends AbstractDao
 {
     public function get_schedule($user_id, $group_id, $weekday)

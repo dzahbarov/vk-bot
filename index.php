@@ -1,9 +1,9 @@
 <?php
 
-use dao\ExamDao;
-use dao\GroupDao;
-use dao\ScheduleDao;
-use dao\SubjectDao;
+//use dao\ExamDao;
+//use dao\GroupDao;
+//use dao\ScheduleDao;
+//use dao\SubjectDao;
 
 define('CALLBACK_API_EVENT_CONFIRMATION', 'confirmation');
 define('CALLBACK_API_EVENT_MESSAGE_NEW', 'message_new');
@@ -14,7 +14,11 @@ require_once 'global.php';
 require_once 'api/vk_api.php';
 require_once 'api/yandex_api.php';
 
-
+require_once 'dao/ExamDao.php';
+require_once 'dao/GroupDao.php';
+require_once 'dao/ScheduleDao.php';
+require_once 'dao/SubjectDao.php';
+require_once 'dao/AbstractDao.php';
 
 require_once 'bot/bot.php';
 

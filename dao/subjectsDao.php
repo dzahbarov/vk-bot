@@ -28,7 +28,7 @@ function get_subjects($user_id, $group_id)
     return $data;
 }
 
-function get_useful_links($user_id, $group_id, $subject_id)
+function get_useful_links($user_id, $subject_id)
 {
     bot_sendMessage($user_id, "34");
     $servername = "localhost";
@@ -46,10 +46,10 @@ function get_useful_links($user_id, $group_id, $subject_id)
         echo "Connection failed: " . $e->getMessage();
     }
     bot_sendMessage($user_id, "1oo");
-    $stmt = $conn->prepare("select * from Useful inner join Subjects on Useful.subject_id = Subjects.subject_id where Subjects.group_id=:group_id");
+    $stmt = $conn->prepare("select * from Useful inner join Subjects on Useful.subject_id = Subjects.subject_id where Subjects.subject_id=:subject_id");
 
     $stmt->execute([
-        'group_id' => $group_id
+        'group_id' => $subject_id
     ]);
 
     $data = $stmt->fetchAll();

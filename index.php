@@ -120,6 +120,7 @@ function _callback_handleMessageNew($data)
                 "label" => $subject['link_name']],
                 "color" => "default"]];
         }
+        bot_sendMessage($user_id, "ebaa");
 
         $key = [
             "one_time" => false,

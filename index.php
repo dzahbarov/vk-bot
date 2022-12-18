@@ -66,7 +66,6 @@ function _callback_handleMessageNew($data)
     $payload = null;
 
     if (isset($data['message']['payload'])) {
-        bot_sendMessage($user_id, "-2");
         $payload = json_decode($data['message']['payload']);
     }
     $group_id = get_group($user_id);
@@ -81,7 +80,7 @@ function _callback_handleMessageNew($data)
 
     if ($group_id == null) {
         $key = json_decode(file_get_contents("bot/add_group.json"), true);
-        vkApi_messagesSendWithKeyboard($user_id, "Hi", $key);
+        vkApi_messagesSendWithKeyboard($user_id, null, $key);
         _callback_okResponse();
     }
 
@@ -97,12 +96,12 @@ function _callback_handleMessageNew($data)
 
     if ($payload != null && $payload->button == "Main") {
         $key = json_decode(file_get_contents("bot/test.json"), true);
-        vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
+        vkApi_messagesSendWithKeyboard($user_id, null, $key);
     }
 
     if ($payload != null && $payload->button == "sch") {
         $key = json_decode(file_get_contents("bot/schedule_select.json"), true);
-        vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
+        vkApi_messagesSendWithKeyboard($user_id, null, $key);
         exit();
     }
 
@@ -155,7 +154,7 @@ function _callback_handleMessageNew($data)
             "buttons" => $array
         ];
 
-        vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
+        vkApi_messagesSendWithKeyboard($user_id, null, $key);
         exit();
     }
 
@@ -187,12 +186,12 @@ function _callback_handleMessageNew($data)
         ];
 
 
-        vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
+        vkApi_messagesSendWithKeyboard($user_id, null, $key);
         exit();
     }
 
     $key = json_decode(file_get_contents("bot/test.json"), true);
-    vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
+    vkApi_messagesSendWithKeyboard($user_id, null, $key);
 
 
     _callback_okResponse();

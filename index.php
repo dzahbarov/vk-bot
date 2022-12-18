@@ -132,6 +132,7 @@ function _callback_handleMessageNew($data)
         exit();
     }
 
+    bot_sendMessage($user_id, $payload->button);
     if ($payload != null && str_starts_with($payload->button, "Subject")) {
         $args = explode(" ", $payload->button);
         $subject_id = end($args);

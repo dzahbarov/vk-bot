@@ -11,12 +11,9 @@ define('CALLBACK_API_EVENT_MESSAGE_NEW', 'message_new');
 require_once 'config.php';
 require_once 'global.php';
 
-//require_once 'dao/GroupDao.php';
 require_once 'api/vk_api.php';
 require_once 'api/yandex_api.php';
-//require_once 'dao/ScheduleDao.php';
-//require_once 'dao/SubjectDao.php';
-//require_once 'dao/ExamDao.php';
+
 
 
 require_once 'bot/bot.php';

@@ -65,7 +65,13 @@ function _callback_handleMessageNew($data)
     $user_id = $data['message']['from_id'];
     bot_sendMessage($user_id, "1");
 
-    $examDao = new ExamDao();
+    try {
+        $examDao = new ExamDao();
+    } catch (Exception $e) {
+        bot_sendMessage($user_id, "2");
+         bot_sendMessage($user_id, $e->getMessage());
+    }
+
     $scheduleDao = new ScheduleDao();
     $subjectDao = new SubjectDao();
     $groupDao = new GroupDao();

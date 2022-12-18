@@ -122,6 +122,19 @@ function _callback_handleMessageNew($data)
         vkApi_messagesSend($user_id, $res);
     }
 
+    if ($payload != null && $payload->button == "sch_week") {
+        $date = new DateTime();
+        $ans="";
+        for($i = 0; $i <= 6; $i++) {
+            $date->modify("+$i day");
+            $weekday = (int) $date->format('N');
+            $ans = $ans . $date->format('Y-m-d') . "\n";
+            $ans = $ans . help($user_id, $group_id, $weekday) . "\n\n";
+        }
+
+        vkApi_messagesSend($user_id, $ans);
+    }
+
     if ($payload != null && $payload->button == "subjects") {
         $subjects = get_subjects($user_id, $group_id);
         $array = array();

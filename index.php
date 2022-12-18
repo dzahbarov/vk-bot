@@ -188,9 +188,10 @@ function _callback_handleMessageNew($data)
 function help($user_id, $group_id, $weekday)
 {
     $schedule = get_schedule($user_id, $group_id, $weekday);
+    bot_sendMessage($user_id, "8888");
     $ans = "";
     foreach ($schedule as $class) {
-        bot_sendMessage($user_id, $class);
+        bot_sendMessage($user_id, "99999");
         $ans = $ans . $class['start_class'] . '-' . $class['end_class'] . ' ' . $class['subject_name'] . "\n";
     }
     return $ans;

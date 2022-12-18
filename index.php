@@ -113,37 +113,10 @@ function _callback_handleMessageNew($data)
 
         $array = array();
         foreach ($subjects as $subject) {
-            $array[] = ["action" => [
+            $array[] = [["action" => [
                 "type" => "text",
                 "payload" => "{\"button\": \"" . $subject['subject_name'] . "\"}",
                 "label" => $subject['subject_name']],
-                "color" => "default"];
-        }
-        bot_sendMessage($user_id, "ebaa");
-
-        $key = [
-            "one_time" => false,
-            "buttons" => $array
-        ];
-
-//        bot_sendMessage($user_id, json_encode($key));
-
-        vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
-        exit();
-    }
-
-    if ($payload != null && $payload->button == "subjects") {
-        bot_sendMessage($user_id, "035897937");
-        $subjects = get_subjects($user_id, $group_id);
-        bot_sendMessage($user_id, "1");
-
-        $array = array();
-        foreach ($subjects as $subject) {
-            $array[] = [["action" => [
-                "type" => "open_link",
-                "link" => $subject['link'],
-                "payload" => "",
-                "label" => $subject['link_name']],
                 "color" => "default"]];
         }
         bot_sendMessage($user_id, "ebaa");
@@ -158,6 +131,33 @@ function _callback_handleMessageNew($data)
         vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
         exit();
     }
+
+//    if ($payload != null && $payload->button == "subjects") {
+//        bot_sendMessage($user_id, "035897937");
+//        $subjects = get_subjects($user_id, $group_id);
+//        bot_sendMessage($user_id, "1");
+//
+//        $array = array();
+//        foreach ($subjects as $subject) {
+//            $array[] = [["action" => [
+//                "type" => "open_link",
+//                "link" => $subject['link'],
+//                "payload" => "",
+//                "label" => $subject['link_name']],
+//                "color" => "default"]];
+//        }
+//        bot_sendMessage($user_id, "ebaa");
+//
+//        $key = [
+//            "one_time" => false,
+//            "buttons" => $array
+//        ];
+//
+////        bot_sendMessage($user_id, json_encode($key));
+//
+//        vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
+//        exit();
+//    }
 
     $key = json_decode(file_get_contents("bot/test.json"), true);
     vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);

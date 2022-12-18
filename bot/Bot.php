@@ -99,7 +99,7 @@ class Bot
         return $ans;
     }
 
-    private function showMainPage(mixed $user_id): void
+    private function showMainPage($user_id): void
     {
         $this->vk_api->sendMessage($user_id, 111);
         $key = json_decode(file_get_contents("bot/keyboards/main.json"), true);
@@ -158,7 +158,7 @@ class Bot
         exit();
     }
 
-    private function showSubjects(mixed $user_id, mixed $group_id): void
+    private function showSubjects($user_id, $group_id): void
     {
         $subjects = $this->subjectDao->get_subjects($user_id, $group_id);
         $array = array();
@@ -215,7 +215,7 @@ class Bot
         exit();
     }
 
-    private function showGroupChoosing(mixed $user_id): void
+    private function showGroupChoosing($user_id): void
     {
         $key = json_decode(file_get_contents("bot/keyboards/add_group.json"), true);
         $this->vk_api->sendMessageWithKeyboard($user_id, "Выберите группу", $key);

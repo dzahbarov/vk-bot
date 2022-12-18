@@ -14,6 +14,7 @@ function vkApi_messagesSend($peer_id, $message)
 
 function vkApi_messagesSendWithKeyboard($peer_id, $message, $keyboard)
 {
+    bot_sendMessage($peer_id, $keyboard);
     return _vkApi_call('messages.send', array(
             'peer_id' => $peer_id,
             'message' => $message,

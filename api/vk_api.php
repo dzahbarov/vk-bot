@@ -23,6 +23,16 @@ function vkApi_messagesSendWithKeyboard($peer_id, $message, $keyboard)
     );
 }
 
+function vkApi_messagesSendWithKeyboardW($peer_id, $keyboard)
+{
+    return _vkApi_call('messages.send', array(
+            'peer_id' => $peer_id,
+            'random_id' => rand(),
+            'keyboard' => json_encode($keyboard)
+        )
+    );
+}
+
 function vkApi_messagesSendWithKeyboardTest($peer_id, $message, $keyboard)
 {
     return _vkApi_call('messages.send', array(

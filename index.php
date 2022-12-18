@@ -1,6 +1,6 @@
 <?php
 
-use dao\ExamDao;
+//use dao\ExamDao;
 use dao\GroupDao;
 use dao\ScheduleDao;
 use dao\SubjectDao;
@@ -10,7 +10,7 @@ define('CALLBACK_API_EVENT_MESSAGE_NEW', 'message_new');
 
 require_once 'config.php';
 require_once 'global.php';
-
+require_once 'ExamDao.php';
 require_once 'api/vk_api.php';
 require_once 'api/yandex_api.php';
 

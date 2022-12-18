@@ -5,7 +5,7 @@
 //use PDO;
 //use PDOException;
 
-namespace dao;
+//namespace dao;
 class ExamDao
 {
     public function get_exams()

@@ -73,12 +73,6 @@ function _callback_handleMessageNew($data)
     }
     $group_id = get_group($user_id);
 
-    if ($group_id == null) {
-        $key = json_decode(file_get_contents("bot/add_group.json"), true);
-        vkApi_messagesSendWithKeyboard($user_id, "Hi", $key);
-        _callback_okResponse();
-    }
-
     if ($payload != null && strpos($payload->button, 'Group') === 0) {
         bot_sendMessage($user_id, 33);
         $args = explode(" ", $payload->button);
@@ -86,6 +80,14 @@ function _callback_handleMessageNew($data)
         add_group($user_id, $group_id);
         bot_sendMessage($user_id, "Группа установлена!");
     }
+
+    if ($group_id == null) {
+        $key = json_decode(file_get_contents("bot/add_group.json"), true);
+        vkApi_messagesSendWithKeyboard($user_id, "Hi", $key);
+        _callback_okResponse();
+    }
+
+
 
 
     bot_sendMessage($user_id, "-1");

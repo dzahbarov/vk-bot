@@ -1,6 +1,6 @@
 <?php
 
-use dao\ExamDao;
+use dao\ExamDao as ExamDao;
 use dao\GroupDao;
 use dao\ScheduleDao;
 use dao\SubjectDao;

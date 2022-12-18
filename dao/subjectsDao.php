@@ -49,7 +49,7 @@ function get_useful_links($user_id, $subject_id)
     $stmt = $conn->prepare("select * from Useful inner join Subjects on Useful.subject_id = Subjects.subject_id where Subjects.subject_id=:subject_id");
 
     $stmt->execute([
-        'group_id' => $subject_id
+        'subject_id' => $subject_id
     ]);
 
     $data = $stmt->fetchAll();

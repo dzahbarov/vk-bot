@@ -115,7 +115,7 @@ insert into Useful(subject_id, link_name, link) values
     (1, 'Баллы', 'https://vk.cc/cjQcVA'),
     (1, 'ДЗ', 'https://vk.cc/cjQcXn'),
     (1, 'Диск', 'https://vk.cc/cjQcYA'),
-    (1, 'YouTube', 'https://www.youtube.com/playlist?list=PLI83Pf8BmFlcEfss4dyvSNWi93DNsax0A'),
+    (1, 'YouTube', 'https://vk.cc/cjQcZr'),
     (1, 'Очередь', 'https://vk.cc/cjQcZr'),
     (1, 'Запись', 'https://vk.cc/cjQd0K'),
     (2, 'Баллы', 'https://vk.cc/cjQd24'),

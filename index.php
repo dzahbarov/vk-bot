@@ -96,6 +96,8 @@ function _callback_handleMessageNew($data)
     if ($payload != null && $payload->button == "Main") {
         $key = json_decode(file_get_contents("bot/test.json"), true);
         vkApi_messagesSendWithKeyboard($user_id, "Выберите действие", $key);
+        _callback_okResponse();
+        exit();
     }
 
     if ($payload != null && $payload->button == "sch") {

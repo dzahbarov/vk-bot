@@ -18,7 +18,7 @@ function get_exams($user_id, $group_id)
         echo "Connection failed: " . $e->getMessage();
     }
     bot_sendMessage($user_id, "1oo");
-    $stmt = $conn->prepare("select * from Exams inner join Subjects on Exams.subject_id = Subjects.subject_id where group_id=:group_id");
+    $stmt = $conn->prepare("select * from Exams inner join Subjects on Exams.subject_id = Subjects.subject_id where Subjects.group_id=:group_id");
 
     $stmt->execute([
         'group_id' => $group_id

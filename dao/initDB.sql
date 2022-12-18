@@ -102,14 +102,14 @@ alter table Schedule
 
 insert into `Groups`(group_no) values ('M33371');
 
-insert into Subjects(subject_name, lector) values
-    ('Анализ данных', 'Муравьёв Сергей Борисович'),
-    ('Методы трансляции', 'Станкевич Андрей Сергеевич'),
-    ('Параллельное программирование', 'Елизаров Роман Анатольевич'),
-    ('Математическая статистика', 'Блаженов Алексей Викторович'),
-    ('Функциональное программирование', 'Serokell'),
-    ('PHP', 'VK'),
-    ('Blockchain', 'MixBytes');
+insert into Subjects(group_id, subject_name, lector) values
+    (1, 'Анализ данных', 'Муравьёв Сергей Борисович'),
+    (1, 'Методы трансляции', 'Станкевич Андрей Сергеевич'),
+    (1, 'Параллельное программирование', 'Елизаров Роман Анатольевич'),
+    (1, 'Математическая статистика', 'Блаженов Алексей Викторович'),
+    (1, 'Функциональное программирование', 'Serokell'),
+    (1, 'PHP', 'VK'),
+    (1, 'Blockchain', 'MixBytes');
 
 insert into Useful(subject_id, link_name, link) values
     (1, 'Баллы', 'https://docs.google.com/spreadsheets/d/1Cn1fWDoC1ne5d7t2pUqclGz1GUjNpP1fhbsBiG_foYk/edit#gid=0'),
@@ -128,6 +128,8 @@ insert into Exams(group_id, subject_id, ts) values
     (1, 2, '2022-01-13'),
     (1, 3, '2022-01-17'),
     (1, 4, '2022-01-23');
+
+insert into Students values (171330601, 1);
 
 # insert into Classes(subject_id, start_class, end_class) values
 #     (4, '11:40:00', '13:10:00'),

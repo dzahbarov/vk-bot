@@ -6,8 +6,8 @@
 //use PDOException;
 
 class ExamDao  {
-    public function get_exams($group_id) {
-        return 11;
+    public function get_exams() {
+        return "11";
 //        $servername = "localhost";
 //        $username = "bot";
 //        $password = "@Aasdjkhkuhb43289b";

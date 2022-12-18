@@ -21,10 +21,11 @@ require_once 'bot/bot.php';
 if (!isset($_REQUEST)) {
     exit;
 }
+$examDao = new ExamDao();
 
-callback_handleEvent();
+callback_handleEvent($examDao);
 
-function callback_handleEvent()
+function callback_handleEvent($examDao)
 {
     $event = _callback_getEvent();
     try {
@@ -36,7 +37,7 @@ function callback_handleEvent()
 
             //Получение нового сообщения
             case CALLBACK_API_EVENT_MESSAGE_NEW:
-                _callback_handleMessageNew($event['object']);
+                _callback_handleMessageNew($event['object'], $examDao);
                 break;
 
             default:
@@ -60,14 +61,16 @@ function _callback_handleConfirmation()
     _callback_response(CALLBACK_API_CONFIRMATION_TOKEN);
 }
 
-function _callback_handleMessageNew($data)
+function _callback_handleMessageNew($data, $examDao)
 {
     $user_id = $data['message']['from_id'];
     bot_sendMessage($user_id, "1");
 
     try {
-        $examDao = new ExamDao();
+
         bot_sendMessage($user_id, "6");
+        bot_sendMessage($user_id, $examDao->get_exams);
+        bot_sendMessage($user_id, "7");
     } catch (Exception $e) {
         bot_sendMessage($user_id, "2");
         bot_sendMessage($user_id, $e->getMessage());

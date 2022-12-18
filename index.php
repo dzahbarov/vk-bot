@@ -30,7 +30,7 @@ $examDao = new ExamDao();
 
 callback_handleEvent($examDao);
 
-function callback_handleEvent($examDao)
+function callback_handleEvent()
 {
     $event = _callback_getEvent();
     try {
@@ -42,7 +42,7 @@ function callback_handleEvent($examDao)
 
             //Получение нового сообщения
             case CALLBACK_API_EVENT_MESSAGE_NEW:
-                _callback_handleMessageNew($event['object'], $examDao);
+                _callback_handleMessageNew($event['object']);
                 break;
 
             default:
@@ -66,26 +66,16 @@ function _callback_handleConfirmation()
     _callback_response(CALLBACK_API_CONFIRMATION_TOKEN);
 }
 
-function _callback_handleMessageNew($data, $examDao)
+function _callback_handleMessageNew($data)
 {
     $user_id = $data['message']['from_id'];
     bot_sendMessage($user_id, "1");
 
-    try {
-
-        bot_sendMessage($user_id, "6");
-        bot_sendMessage($user_id, $examDao->get_exams);
-        bot_sendMessage($user_id, "7");
-    } catch (Exception $e) {
-        bot_sendMessage($user_id, "2");
-        bot_sendMessage($user_id, $e->getMessage());
-    }
-
+    $examDao = new ExamDao();
     $scheduleDao = new ScheduleDao();
     $subjectDao = new SubjectDao();
     $groupDao = new GroupDao();
 
-    bot_sendMessage($user_id, "3");
 
     $payload = null;
 

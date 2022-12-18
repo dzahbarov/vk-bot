@@ -5,7 +5,7 @@
       {
         "action":{
           "type":"text",
-          "payload":"{\"button\": \"1\"}",
+          "payload":"{\"button\": \"sch\"}",
           "label":"Расписание"
         },
         "color":"primary"
@@ -13,7 +13,7 @@
       {
         "action":{
           "type":"text",
-          "payload":"{\"button\": \"2\"}",
+          "payload":"{\"button\": \"session\"}",
           "label":"Сессия"
         },
         "color":"negative"

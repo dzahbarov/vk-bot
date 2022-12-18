@@ -93,6 +93,7 @@ function _callback_handleMessageNew($data)
     if ($payload != null && $payload->button == "1") {
         $key = json_decode(file_get_contents("bot/schedule_select.json"), true);
         vkApi_messagesSendWithKeyboard($user_id, "Hi. your group " . $group_id, $key);
+        exit();
 //        $exams = get_exams($user_id, $group_id);
 //        bot_sendMessage($user_id, "1");
 //        $ans = "";

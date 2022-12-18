@@ -190,6 +190,7 @@ function help($user_id, $group_id, $weekday)
     $schedule = get_schedule($user_id, $group_id, $weekday);
     $ans = "";
     foreach ($schedule as $class) {
+        bot_sendMessage($user_id, $class);
         $ans = $ans . $class['start_class'] . '-' . $class['end_class'] . ' ' . $class['subject_name'] . "\n";
     }
     return $ans;

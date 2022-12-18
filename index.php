@@ -159,7 +159,7 @@ function _callback_handleMessageNew($data)
         exit();
     }
 
-    if ($payload != null && strpos($payload->button, 'Subject') === 0) {
+    if ($payload != null && strpos($payload->button, "Subject") === 0) {
         $args = explode(" ", $payload->button);
         $subject_id = end($args);
 

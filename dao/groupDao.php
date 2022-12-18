@@ -10,7 +10,6 @@ function add_group($user_id, $group_id)
         $conn = new PDO("mysql:host=$servername;dbname=bot_db", $username, $password);
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully";
     } catch (PDOException $e) {
         bot_sendMessage($user_id, $e->getMessage());
         echo "Connection failed: " . $e->getMessage();
@@ -32,7 +31,6 @@ function get_group($user_id)
         $conn = new PDO("mysql:host=$servername;dbname=bot_db", $username, $password);
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully";
 
     } catch (PDOException $e) {
         bot_sendMessage($user_id, $e->getMessage());

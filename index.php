@@ -133,9 +133,9 @@ function _callback_handleMessageNew($data)
     }
 
     bot_sendMessage($user_id, $payload->button);
-    bot_sendMessage($user_id, str_starts_with($payload->button, 'Subject') ? 'true' : 'false');
-    bot_sendMessage($user_id, str_starts_with($payload->button, "Subject") ? 'true' : 'false');
-    if ($payload != null && str_starts_with($payload->button, "Subject")) {
+//    bot_sendMessage($user_id, str_starts_with($payload->button, 'Subject') ? 'true' : 'false');
+//    bot_sendMessage($user_id, str_starts_with($payload->button, "Subject") ? 'true' : 'false');
+    if ($payload != null && strpos($payload->button, 'Subject') === 0) {
         bot_sendMessage($user_id, 33);
         $args = explode(" ", $payload->button);
         $subject_id = end($args);

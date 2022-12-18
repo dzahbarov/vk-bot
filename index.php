@@ -107,7 +107,7 @@ function _callback_handleMessageNew($data)
     }
 
     if ($payload != null && $payload->button == "subjects") {
-        bot_sendMessage($user_id, "0");
+        bot_sendMessage($user_id, "035897937");
         $subjects = get_subjects($user_id, $group_id);
         bot_sendMessage($user_id, "1");
 

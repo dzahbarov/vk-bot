@@ -9,6 +9,16 @@
           "label":"Расписание"
         },
         "color":"primary"
+      }
+    ],
+    [
+      {
+        "action":{
+          "type":"text",
+          "payload":"{\"button\": \"subjects\"}",
+          "label":"Предметы"
+        },
+        "color":"primary"
       },
       {
         "action":{

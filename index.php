@@ -126,7 +126,7 @@ function _callback_handleMessageNew($data)
         $date = new DateTime();
         $ans="";
         for($i = 0; $i <= 6; $i++) {
-            $date->modify("+$i day");
+            $date->modify("+1 day");
             $weekday = (int) $date->format('N');
             $ans = $ans . $date->format('Y-m-d') . "\n";
             $ans = $ans . help($user_id, $group_id, $weekday) . "\n\n";

@@ -225,6 +225,7 @@ class Bot
     {
         $this->vk_api->sendMessage($user_id, 123);
         $key = json_decode(file_get_contents("bot/keyboards/add_group.json"), true);
+        $this->vk_api->sendMessage($user_id, $key);
         $this->vk_api->sendMessage($user_id, 345);
         $this->vk_api->sendMessage($user_id, $key);
         $this->vk_api->sendMessageWithKeyboard($user_id, "Выберите группу", $key);

@@ -152,7 +152,7 @@ class Bot
 
     private function showGroupChoosing($user_id): void
     {
-        $key = json_decode(file_get_contents("bot/keyboards/schedule_select.json"), true);
+        $key = json_decode(file_get_contents("bot/keyboards/add_group.json"), true);
         $this->vk_api->sendMessageWithKeyboard($user_id, "Выберите группу", $key);
         _callback_okResponse();
         exit();

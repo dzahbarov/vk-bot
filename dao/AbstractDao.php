@@ -1,18 +1,15 @@
 <?php
 
-
 abstract class AbstractDao
 {
     public PDO $conn;
 
     final public function __construct()
     {
-        $servername = "localhost";
-        $username = "bot";
-        $password = "@Aasdjkhkuhb43289b";
+        $servername = BD_SERVERNAME;
         $conn = null;
         try {
-            $conn = new PDO("mysql:host=$servername;dbname=bot_db", $username, $password);
+            $conn = new PDO("mysql:host=$servername;dbname=" . BD_DATABASE, BD_USERNAME, BD_PASSWORD);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();

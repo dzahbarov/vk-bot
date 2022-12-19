@@ -166,16 +166,24 @@ class Bot
 
     private function showGroupChoosing($user_id): void
     {
-        $this->vk_api->sendMessage($user_id, 123);
         $key = json_decode(file_get_contents("bot/keyboards/schedule_select.json"), true);
-        $this->vk_api->sendMessage($user_id, $key);
-        $this->vk_api->sendMessage($user_id, 345);
-        $this->vk_api->sendMessage($user_id, $key);
-        $this->vk_api->sendMessageWithKeyboard($user_id, "Выберите группу", $key);
-        $this->vk_api->sendMessage($user_id, 3444);
+        $this->vk_api->sendMessageWithKeyboard($user_id, "Выберите дату", $key);
         _callback_okResponse();
         exit();
     }
+
+//    private function showGroupChoosing($user_id): void
+//    {
+//        $this->vk_api->sendMessage($user_id, 123);
+//        $key = json_decode(file_get_contents("bot/keyboards/schedule_select.json"), true);
+//        $this->vk_api->sendMessage($user_id, $key);
+//        $this->vk_api->sendMessage($user_id, 345);
+//        $this->vk_api->sendMessage($user_id, $key);
+//        $this->vk_api->sendMessageWithKeyboard($user_id, "Выберите группу", $key);
+//        $this->vk_api->sendMessage($user_id, 3444);
+//        _callback_okResponse();
+//        exit();
+//    }
 
     private function showSubjects($user_id, $group_id): void
     {

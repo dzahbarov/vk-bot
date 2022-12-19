@@ -35,11 +35,18 @@ class Bot
             $payload = json_decode($data['message']['payload']);
         }
 
+        $this->vk_api->sendMessage($user_id, 22);
+
         $group_id = $this->groupDao->get_group($user_id);
 
+        $this->vk_api->sendMessage($user_id, 33);
+
         if ($payload != null && $payload->button == 'Group') {
+            $this->vk_api->sendMessage($user_id, 44);
             $this->groupDao->add_group($user_id, $payload->group_id);
+            $this->vk_api->sendMessage($user_id, 55);
             $this->vk_api->sendMessage($user_id, "Группа установлена!");
+            $this->vk_api->sendMessage($user_id, 66);
             $this->showMainPage($user_id);
         }
 

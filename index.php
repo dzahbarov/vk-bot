@@ -15,8 +15,6 @@ if (!isset($_REQUEST)) {
     exit;
 }
 
-echo 11;
-
 callback_handleEvent();
 
 function callback_handleEvent(): void

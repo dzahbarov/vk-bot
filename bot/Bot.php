@@ -28,8 +28,6 @@ class Bot
     {
         $user_id = $data['message']['from_id'];
 
-        $this->vk_api->sendMessage($user_id, BD_USERNAME);
-
         $payload = null;
         if (isset($data['message']['payload'])) {
             $payload = json_decode($data['message']['payload']);

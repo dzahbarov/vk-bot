@@ -6,10 +6,14 @@ const CALLBACK_API_EVENT_MESSAGE_NEW = 'message_new';
 require_once 'config.php';
 require_once 'global.php';
 require_once 'bot/Bot.php';
+require_once "vendor/autoload.php";
 
 if (!isset($_REQUEST)) {
     exit;
 }
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 callback_handleEvent();
 

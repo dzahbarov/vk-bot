@@ -5,7 +5,7 @@
       {
         "action":{
           "type":"text",
-          "payload":"{\"button\": \"Group\", \"group_id\", \"1\"}",
+          "payload":"{\"button\": \"Group\", \"group_id\": \"1\"}",
           "label":"M33371"
         },
         "color":"primary"

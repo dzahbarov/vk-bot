@@ -28,36 +28,22 @@ class Bot
     {
         $user_id = $data['message']['from_id'];
 
-        $this->vk_api->sendMessage($user_id, 11);
-
         $payload = null;
         if (isset($data['message']['payload'])) {
             $payload = json_decode($data['message']['payload']);
         }
 
-        $this->vk_api->sendMessage($user_id, 22);
-
         $group_id = $this->groupDao->get_group($user_id);
 
-        $this->vk_api->sendMessage($user_id, 33);
-
         if ($payload != null && $payload->button == 'Group') {
-            $this->vk_api->sendMessage($user_id, 44);
             $this->groupDao->add_group($user_id, $payload->group_id);
-            $this->vk_api->sendMessage($user_id, 55);
             $this->vk_api->sendMessage($user_id, "Группа установлена!");
-            $this->vk_api->sendMessage($user_id, 66);
             $this->showMainPage($user_id);
         }
 
-        $this->vk_api->sendMessage($user_id, 77);
         if ($group_id == null) {
-            $this->vk_api->sendMessage($user_id, 88);
             $this->showGroupChoosing($user_id);
-            $this->vk_api->sendMessage($user_id, 99);
         }
-
-        $this->vk_api->sendMessage($user_id, 123123);
 
         if ($payload != null) {
             switch ($payload->button) {
@@ -166,24 +152,11 @@ class Bot
 
     private function showGroupChoosing($user_id): void
     {
-        $key = json_decode(file_get_contents("bot/keyboards/main.json"), true);
-        $this->vk_api->sendMessageWithKeyboard($user_id, "Выберите дату", $key);
+        $key = json_decode(file_get_contents("bot/keyboards/schedule_select.json"), true);
+        $this->vk_api->sendMessageWithKeyboard($user_id, "Выберите группу", $key);
         _callback_okResponse();
         exit();
     }
-
-//    private function showGroupChoosing($user_id): void
-//    {
-//        $this->vk_api->sendMessage($user_id, 123);
-//        $key = json_decode(file_get_contents("bot/keyboards/schedule_select.json"), true);
-//        $this->vk_api->sendMessage($user_id, $key);
-//        $this->vk_api->sendMessage($user_id, 345);
-//        $this->vk_api->sendMessage($user_id, $key);
-//        $this->vk_api->sendMessageWithKeyboard($user_id, "Выберите группу", $key);
-//        $this->vk_api->sendMessage($user_id, 3444);
-//        _callback_okResponse();
-//        exit();
-//    }
 
     private function showSubjects($user_id, $group_id): void
     {

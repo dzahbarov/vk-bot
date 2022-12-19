@@ -11,8 +11,6 @@ require_once 'config.php';
 require_once 'global.php';
 require_once 'bot/Bot.php';
 
-ECHO BD_DATABASE;
-
 if (!isset($_REQUEST)) {
     exit;
 }

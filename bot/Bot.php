@@ -144,7 +144,7 @@ class Bot
 
     private function showSchedulePage($user_id): void
     {
-        $key = json_decode(file_get_contents("bot/keyboards/add_group.json"), true);
+        $key = json_decode(file_get_contents("bot/keyboards/schedule_select.json"), true);
         $this->vk_api->sendMessageWithKeyboard($user_id, "Выберите дату", $key);
         _callback_okResponse();
         exit();

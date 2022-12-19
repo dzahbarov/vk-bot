@@ -17,6 +17,10 @@ class Bot
 
     final public function __construct()
     {
+        foreach (getenv() as $e) {
+            log_error($e);
+        }
+
         $this->vk_api = new VkApi();
         $this->examDao = new ExamDao();
         $this->scheduleDao = new ScheduleDao();

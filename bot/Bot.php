@@ -33,17 +33,16 @@ class Bot
             $payload = json_decode($data['message']['payload']);
         }
 
+        if ($data['message']['text'] == 'Изменить группу') {
+            $this->groupDao->rm_group($user_id);
+        }
+
         $group_id = $this->groupDao->get_group($user_id);
 
         if ($payload != null && $payload->button == 'Group') {
             $this->groupDao->add_group($user_id, $payload->group_id);
             $this->vk_api->sendMessage($user_id, "Группа установлена! Чтобы ее изменить, напишите в чат \"Изменить группу\"");
             $this->showMainPage($user_id);
-        }
-
-
-        if ($data['message']['text'] == 'Изменить группу') {
-            $this->groupDao->rm_group($user_id);
         }
 
         if ($group_id == null) {

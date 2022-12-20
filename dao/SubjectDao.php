@@ -1,10 +1,10 @@
 <?php
-//namespace dao;
+
 require_once 'dao/AbstractDao.php';
 
 class SubjectDao extends AbstractDao
 {
-    function get_subjects($user_id, $group_id)
+    function get_subjects($group_id)
     {
         $stmt = $this->conn->prepare("select * from Subjects where Subjects.group_id=:group_id");
         $stmt->execute(['group_id' => $group_id]);

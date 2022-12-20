@@ -80,9 +80,9 @@ class Bot
         $this->showMainPage($user_id);
     }
 
-    private function getSchedule($user_id, $group_id, $weekday, $scheduleDao): string
+    private function getSchedule($group_id, $weekday): string
     {
-        $schedule = $scheduleDao->get_schedule($user_id, $group_id, $weekday);
+        $schedule = $this->scheduleDao->get_schedule($group_id, $weekday);
 
         if (empty($schedule)) {
             return "В этот день нет пар";
@@ -116,7 +116,7 @@ class Bot
     {
         $date = new DateTime();
         $weekday = (int)$date->format('N');
-        $res = $this->getSchedule($user_id, $group_id, $weekday, $this->scheduleDao);
+        $res = $this->getSchedule($group_id, $weekday);
         $this->vk_api->sendMessage($user_id, $res);
     }
 
@@ -125,7 +125,7 @@ class Bot
         $date = new DateTime();
         $date->modify('+1 day');
         $weekday = (int)$date->format('N');
-        $res = $this->getSchedule($user_id, $group_id, $weekday, $this->scheduleDao);
+        $res = $this->getSchedule($group_id, $weekday);
         $this->vk_api->sendMessage($user_id, $res);
     }
 
@@ -137,7 +137,7 @@ class Bot
             $date->modify("+1 day");
             $weekday = (int)$date->format('N');
             $ans = $ans . "{$date->format('Y-m-d')} \n";
-            $ans = $ans . $this->getSchedule($user_id, $group_id, $weekday, $this->scheduleDao) . "\n\n";
+            $ans = $ans . $this->getSchedule($group_id, $weekday) . "\n\n";
         }
         $this->vk_api->sendMessage($user_id, $ans);
     }
@@ -160,7 +160,7 @@ class Bot
 
     private function showSubjects($user_id, $group_id): void
     {
-        $subjects = $this->subjectDao->get_subjects($user_id, $group_id);
+        $subjects = $this->subjectDao->get_subjects($group_id);
         $array = array();
         foreach ($subjects as $subject) {
             $array[] = [["action" => [

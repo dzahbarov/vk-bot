@@ -7,7 +7,7 @@ require_once 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-require_once 'config.php';
+require_once 'config/config.php';
 require_once 'global.php';
 require_once 'bot/Bot.php';
 
